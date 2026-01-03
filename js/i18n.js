@@ -54,14 +54,6 @@ class I18n {
     }
 
     updateLanguageButton() {
-        const flagMap = {
-            'en': 'gb',
-            'ro': 'ro',
-            'it': 'it',
-            'ru': 'ru',
-            'uk': 'ua'
-        };
-        
         const codeMap = {
             'en': 'EN',
             'ro': 'RO',
@@ -70,13 +62,11 @@ class I18n {
             'uk': 'UA'
         };
         
-        const currentFlag = document.getElementById('currentFlag');
         const currentCode = document.getElementById('currentCode');
         
-        if (currentFlag && currentCode) {
-            currentFlag.src = `https://flagcdn.com/w40/${flagMap[this.currentLang]}.png`;
+        if (currentCode) {
             currentCode.innerText = codeMap[this.currentLang];
-            console.log('Updated flag to:', this.currentLang);
+            console.log('Updated language to:', this.currentLang);
         }
     }
 
@@ -127,7 +117,77 @@ class I18n {
 
         // Update HTML lang attribute
         document.documentElement.lang = this.currentLang;
+        
+        // Update SEO meta tags
+        this.updateSEOMetaTags();
+        
         console.log('Translations applied!');
+    }
+
+    updateSEOMetaTags() {
+        const langSEO = {
+            'en': {
+                title: 'QRExpress | Free QR Code Generator - Create Custom QR Codes Online',
+                description: 'Create beautiful, customizable QR codes for free. No registration required. Generate QR codes for URLs, WiFi, Email, SMS, Contacts, and more. Download in high quality PNG or vector SVG format.',
+                keywords: 'QR code generator, free QR code, QR code maker, custom QR code, QR code creator, QR code online, QR code designer'
+            },
+            'it': {
+                title: 'QRExpress | Generatore QR Code Gratuito - Crea QR Code Personalizzati Online',
+                description: 'Crea bellissimi QR code personalizzabili gratuitamente. Nessuna registrazione richiesta. Genera QR code per URL, WiFi, Email, SMS, Contatti e altro ancora. Scarica in formato PNG ad alta qualità o vettoriale SVG.',
+                keywords: 'generatore QR code, QR code gratuito, crea QR code, QR code personalizzato, generatore QR code online, designer QR code'
+            },
+            'ro': {
+                title: 'QRExpress | Generator QR Code Gratuit - Creează QR Code Personalizate Online',
+                description: 'Creează QR code-uri frumoase și personalizabile gratuit. Fără înregistrare necesară. Generează QR code-uri pentru URL-uri, WiFi, Email, SMS, Contacte și multe altele. Descarcă în format PNG de înaltă calitate sau vector SVG.',
+                keywords: 'generator QR code, QR code gratuit, creator QR code, QR code personalizat, generator QR code online, designer QR code'
+            },
+            'ru': {
+                title: 'QRExpress | Бесплатный Генератор QR Кодов - Создайте Персонализированные QR Коды Онлайн',
+                description: 'Создавайте красивые, настраиваемые QR коды бесплатно. Регистрация не требуется. Генерируйте QR коды для URL, WiFi, Email, SMS, Контактов и многого другого. Скачивайте в высоком качестве PNG или векторном формате SVG.',
+                keywords: 'генератор QR кодов, бесплатный QR код, создатель QR кодов, персонализированный QR код, генератор QR кодов онлайн, дизайнер QR кодов'
+            },
+            'uk': {
+                title: 'QRExpress | Безкоштовний Генератор QR Кодів - Створіть Персоналізовані QR Коди Онлайн',
+                description: 'Створюйте красиві, налаштовувані QR коди безкоштовно. Реєстрація не потрібна. Генеруйте QR коди для URL, WiFi, Email, SMS, Контактів та багато іншого. Завантажуйте у високій якості PNG або векторному форматі SVG.',
+                keywords: 'генератор QR кодів, безкоштовний QR код, створювач QR кодів, персоналізований QR код, генератор QR кодів онлайн, дизайнер QR кодів'
+            }
+        };
+
+        const seo = langSEO[this.currentLang] || langSEO['en'];
+        
+        // Update title
+        document.title = seo.title;
+        this.updateMetaTag('title', seo.title);
+        this.updateMetaTag('property', 'og:title', seo.title);
+        this.updateMetaTag('property', 'twitter:title', seo.title);
+        
+        // Update description
+        this.updateMetaTag('name', 'description', seo.description);
+        this.updateMetaTag('property', 'og:description', seo.description);
+        this.updateMetaTag('property', 'twitter:description', seo.description);
+        
+        // Update keywords
+        this.updateMetaTag('name', 'keywords', seo.keywords);
+        
+        // Update og:locale
+        const localeMap = {
+            'en': 'en_US',
+            'it': 'it_IT',
+            'ro': 'ro_RO',
+            'ru': 'ru_RU',
+            'uk': 'uk_UA'
+        };
+        this.updateMetaTag('property', 'og:locale', localeMap[this.currentLang] || 'en_US');
+    }
+
+    updateMetaTag(attr, name, content) {
+        let meta = document.querySelector(`meta[${attr}="${name}"]`);
+        if (!meta) {
+            meta = document.createElement('meta');
+            meta.setAttribute(attr, name);
+            document.head.appendChild(meta);
+        }
+        meta.setAttribute('content', content);
     }
 
     t(key) {

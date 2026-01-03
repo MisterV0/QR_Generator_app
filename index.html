@@ -3,8 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>QR express | QR Generator</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366f1'><path d='M3 7V5a2 2 0 0 1 2-2h2'/><path d='M17 3h2a2 2 0 0 1 2 2v2'/><path d='M21 17v2a2 2 0 0 1-2 2h-2'/><path d='M7 21H5a2 2 0 0 1-2-2v-2'/><rect x='7' y='7' width='3' height='3' rx='1'/><rect x='14' y='7' width='3' height='3' rx='1'/><rect x='7' y='14' width='3' height='3' rx='1'/><path d='M14 17h3'/></svg>">
+    
+    <!-- Primary Meta Tags -->
+    <title>QRExpress | Free QR Code Generator - Create Custom QR Codes Online</title>
+    <meta name="title" content="QRExpress | Free QR Code Generator - Create Custom QR Codes Online">
+    <meta name="description" content="Create beautiful, customizable QR codes for free. No registration required. Generate QR codes for URLs, WiFi, Email, SMS, Contacts, and more. Download in high quality PNG or vector SVG format.">
+    <meta name="keywords" content="QR code generator, free QR code, QR code maker, custom QR code, QR code creator, QR code online, QR code designer">
+    <meta name="author" content="QRExpress">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://qrexpress.com/">
+    <meta property="og:title" content="QRExpress | Free QR Code Generator - Create Custom QR Codes Online">
+    <meta property="og:description" content="Create beautiful, customizable QR codes for free. No registration required. Generate QR codes for URLs, WiFi, Email, SMS, Contacts, and more.">
+    <meta property="og:image" content="https://qrexpress.com/resources/logo.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <!-- Note: For best social media sharing, convert logo.svg to PNG 1200x630px and update og:image to that PNG -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="it_IT">
+    <meta property="og:locale:alternate" content="ro_RO">
+    <meta property="og:locale:alternate" content="ru_RU">
+    <meta property="og:locale:alternate" content="uk_UA">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://qrexpress.com/">
+    <meta property="twitter:title" content="QRExpress | Free QR Code Generator">
+    <meta property="twitter:description" content="Create beautiful, customizable QR codes for free. No registration required.">
+    <meta property="twitter:image" content="https://qrexpress.com/resources/logo.svg">
+    <!-- Note: For best Twitter sharing, convert logo.svg to PNG 1200x630px and update twitter:image to that PNG -->
+    
+    <!-- Hreflang Tags for Multi-language SEO -->
+    <link rel="alternate" hreflang="en" href="https://qrexpress.com/#en">
+    <link rel="alternate" hreflang="it" href="https://qrexpress.com/#it">
+    <link rel="alternate" hreflang="ro" href="https://qrexpress.com/#ro">
+    <link rel="alternate" hreflang="ru" href="https://qrexpress.com/#ru">
+    <link rel="alternate" hreflang="uk" href="https://qrexpress.com/#uk">
+    <link rel="alternate" hreflang="x-default" href="https://qrexpress.com/#en">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://qrexpress.com/">
+    
+    <!-- Favicons - Using logo.svg -->
+    <!-- SVG Favicon (Modern browsers) -->
+    <link rel="icon" type="image/svg+xml" href="./resources/logo.svg">
+    <!-- Fallback PNG favicons for older browsers (optional - can be generated from logo.svg) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./resources/logo.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="./resources/logo.svg">
+    <!-- Apple Touch Icon - Note: Convert logo.svg to 180x180 PNG for best results -->
+    <link rel="apple-touch-icon" href="./resources/logo.svg">
     
     <!-- Fonts: Plus Jakarta Sans & Inter (for iOS view) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,15 +125,16 @@
             display: flex; align-items: center; justify-content: space-between; z-index: 10;
         }
 
-        .brand-logo { display: flex; align-items: center; gap: 12px; }
-        .logo-box {
-            width: 36px; height: 36px;
-            background: var(--primary-gradient);
-            color: white; border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
-        }
+        .brand-logo { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
         .brand-text { font-size: 1.25rem; font-weight: 800; color: var(--text-main); letter-spacing: -0.02em; }
+        .brand-tagline { 
+            font-size: 0.75rem; 
+            font-weight: 500; 
+            color: var(--text-sub); 
+            opacity: 0.7;
+            letter-spacing: 0.01em;
+            line-height: 1.2;
+        }
 
         .nav-items { display: flex; align-items: center; gap: 20px; }
         .nav-link { color: var(--text-sub); font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: 0.2s; }
@@ -96,12 +148,6 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
         .lang-btn:hover { border-color: var(--primary); transform: translateY(-1px); }
-        .lang-btn img, .lang-option img { 
-            width: 20px; height: auto; 
-            border-radius: 2px; 
-            box-shadow: 0 1px 2px rgba(0,0,0,0.1); 
-            border: 1px solid rgba(0,0,0,0.08); 
-        }
 
         .lang-dropdown { position: relative; }
         
@@ -116,7 +162,7 @@
         .dropdown-menu.show { opacity: 1; visibility: visible; transform: translateY(0); }
         
         .lang-option {
-            padding: 10px; border-radius: 10px; display: flex; align-items: center; gap: 10px;
+            padding: 10px; border-radius: 10px; display: flex; align-items: center;
             text-decoration: none; color: var(--text-main); font-size: 0.85rem; font-weight: 600;
             transition: 0.2s;
         }
@@ -448,6 +494,7 @@
             border-radius: 20px; padding: 20px;
             transform: translateY(110%); transition: transform 0.6s var(--spring-bounce);
             z-index: 50; text-align: center; display: flex; flex-direction: column; align-items: center;
+            max-height: 70vh; overflow-y: auto;
         }
         .bottom-sheet.visible { transform: translateY(-15px); }
         .sheet-pill { width: 36px; height: 5px; background: #C6C6C8; border-radius: 10px; margin-bottom: 15px; }
@@ -459,6 +506,7 @@
         }
         /* Simplified text structure for sheet */
         .sheet-desc { font-size: 14px; color: var(--text-main); margin-bottom: 15px; line-height: 1.4; max-width: 90%; word-break: break-all; }
+
 
         /* Fake IOS Buttons */
         .sheet-actions { width: 100%; display: flex; flex-direction: column; gap: 8px; }
@@ -483,7 +531,7 @@
         .modal-overlay.show { display: flex; opacity: 1; }
         
         .modal-content {
-            background: white; width: 92%; max-width: 850px;
+            background: white; width: 92%; max-width: 1000px;
             padding: 2.5rem; border-radius: 28px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); 
             transform: scale(0.9); transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -498,22 +546,51 @@
         .modal-close-icon { position: absolute; top: 1.5rem; right: 1.5rem; cursor: pointer; color: var(--text-sub); background: none; border: none; transition: 0.2s; z-index: 10; }
         .modal-close-icon:hover { color: var(--text-main); }
 
-        .modal-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+        .modal-layout { 
+            display: grid; 
+            grid-template-columns: 400px 1fr; 
+            gap: 2.5rem; 
+            align-items: start; 
+        }
 
         .modal-preview-container {
-            width: 100%; display: flex; justify-content: center; align-items: center;
-            background: #f8fafc; border-radius: 20px; padding: 2rem;
-            border: 1px solid #e2e8f0; height: 100%; min-height: 300px;
+            width: 100%; 
+            max-width: 400px;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            background: #f8fafc; 
+            border-radius: 20px; 
+            padding: 2.5rem;
+            border: 1px solid #e2e8f0; 
+            position: sticky;
+            top: 2rem;
+            aspect-ratio: 1;
         }
         #previewCanvas {
-            max-width: 100%; height: auto; 
-            box-shadow: 0 10px 30px -5px rgba(0,0,0,0.1); border-radius: 12px;
+            width: 100%; 
+            max-width: 100%;
+            height: auto; 
+            box-shadow: 0 10px 30px -5px rgba(0,0,0,0.1); 
+            border-radius: 12px;
             background: white;
+            display: block;
         }
 
         .modal-controls { display: flex; flex-direction: column; gap: 1.5rem; }
 
-        .template-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+        .template-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 12px; 
+            max-height: 400px; 
+            overflow-y: auto; 
+            padding-right: 8px;
+        }
+        .template-grid::-webkit-scrollbar { width: 6px; }
+        .template-grid::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 10px; }
+        .template-grid::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        .template-grid::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
         .template-card {
             border: 2px solid transparent; border-radius: 12px; padding: 10px 8px; text-align: center;
             cursor: pointer; transition: all 0.2s; background: #f8fafc;
@@ -533,6 +610,13 @@
         .tp-social { background: #cbd5e1; border: 2px solid #8b5cf6; }
         .tp-product { background: #cbd5e1; border: 2px solid #3b82f6; }
         .tp-event { background: #cbd5e1; border: 2px solid #f97316; }
+        .tp-review { background: #cbd5e1; border: 2px solid #f59e0b; }
+        .tp-order { background: #cbd5e1; border: 2px solid #10b981; }
+        .tp-pay { background: #cbd5e1; border: 2px solid #22c55e; }
+        .tp-community { background: #cbd5e1; border: 2px solid #6366f1; }
+        .tp-video { background: #cbd5e1; border: 2px solid #ef4444; }
+        .tp-book { background: #cbd5e1; border: 2px solid #8b5cf6; }
+        .tp-report { background: #cbd5e1; border: 2px solid #f97316; }
 
         .template-name { font-size: 0.75rem; font-weight: 700; color: var(--text-main); }
 
@@ -548,6 +632,53 @@
         .btn-svg:hover { border-color: var(--text-main); background: #f8fafc; }
 
         .footer-text { font-size: 0.8rem; color: var(--text-sub); margin: 1rem 0; font-weight: 600; }
+        
+        /* Footer buttons */
+        .footer-btn {
+            background: transparent; border: none; cursor: pointer; padding: 0.5rem 0.75rem;
+            border-radius: 8px; transition: all 0.2s; text-align: center;
+            font-size: 0.85rem; font-weight: 500; color: var(--text-sub);
+            position: relative;
+        }
+        .footer-btn:hover { 
+            background: #f8fafc; 
+            color: var(--text-main);
+        }
+        .footer-btn:active { transform: scale(0.98); }
+        
+        /* Footer modals */
+        .footer-modal-overlay {
+            position: fixed; inset: 0; background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(8px);
+            display: none; align-items: center; justify-content: center; z-index: 10000;
+            opacity: 0; transition: opacity 0.3s ease;
+        }
+        .footer-modal-overlay.show { display: flex; opacity: 1; }
+        .footer-modal-content {
+            background: white; border-radius: 24px; padding: 2.5rem; max-width: 600px; width: 90%;
+            max-height: 80vh; overflow-y: auto; position: relative; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            transform: scale(0.9); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .footer-modal-overlay.show .footer-modal-content { transform: scale(1); }
+        .footer-modal-close {
+            position: absolute; top: 1.5rem; right: 1.5rem; width: 36px; height: 36px;
+            border-radius: 50%; background: #f1f5f9; border: none; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; transition: all 0.2s;
+        }
+        .footer-modal-close:hover { background: #e2e8f0; transform: rotate(90deg); }
+        .footer-modal-title {
+            font-size: 1.75rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;
+        }
+        .footer-modal-disclaimer {
+            font-size: 0.85rem; color: var(--text-sub); font-style: italic; margin-bottom: 1.5rem;
+            padding: 0.75rem 0;
+        }
+        .footer-modal-body {
+            font-size: 0.95rem; line-height: 1.7; color: var(--text-main);
+        }
+        .footer-modal-body a {
+            color: var(--primary); text-decoration: none; font-weight: 600;
+        }
+        .footer-modal-body a:hover { text-decoration: underline; }
 
         /* Responsive */
         @media (max-width: 900px) {
@@ -558,17 +689,229 @@
             .controls-panel { border-radius: 0 0 24px 24px; }
             #qr-canvas { width: 240px; height: 240px; padding: 15px; }
             #qr-canvas canvas { width: 100% !important; height: auto !important; }
+            footer { padding: 1.5rem 1rem !important; }
+            footer > div:first-child { gap: 1.5rem 2rem !important; }
+            .footer-btn { padding: 0.4rem 0.6rem !important; font-size: 0.8rem !important; }
+            .footer-modal-content { padding: 1.5rem !important; max-width: 95% !important; }
         }
 
         /* Modal specific responsive */
+        @media (max-width: 900px) {
+            .modal-layout { 
+                grid-template-columns: 1fr; 
+                gap: 2rem; 
+            }
+            .modal-preview-container {
+                max-width: 100%;
+                position: static;
+                aspect-ratio: 1;
+                max-width: 350px;
+                margin: 0 auto;
+            }
+        }
         @media (max-width: 768px) {
             .modal-content { padding: 1.5rem; width: 95%; }
-            .modal-layout { grid-template-columns: 1fr; gap: 1.5rem; }
             .modal-header { margin-bottom: 1rem; }
+            .modal-preview-container {
+                padding: 2rem;
+                max-width: 300px;
+            }
         }
 
         @media (max-width: 500px) { .tabs-grid { grid-template-columns: repeat(2, 1fr); } }
         
+        /* Welcome Modal Styles */
+        .welcome-modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(10px); z-index: 2000;
+            display: none; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.4s ease;
+        }
+        .welcome-modal-overlay.show { display: flex; opacity: 1; }
+        
+        .welcome-modal-content {
+            background: white; width: 92%; max-width: 600px;
+            padding: 2.5rem; border-radius: 28px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3); 
+            transform: scale(0.9) translateY(20px); transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            text-align: left; position: relative; max-height: 90vh; overflow-y: auto;
+        }
+        .welcome-modal-overlay.show .welcome-modal-content { transform: scale(1) translateY(0); }
+        
+        .welcome-modal-header { text-align: center; margin-bottom: 2rem; }
+        .welcome-modal-title { 
+            font-size: 1.75rem; font-weight: 800; color: var(--text-main); 
+            margin-bottom: 0.5rem; background: var(--primary-gradient);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .welcome-perks {
+            background: linear-gradient(135deg, #eef2ff 0%, #f3e8ff 100%);
+            border-radius: 16px; padding: 1.5rem; margin-bottom: 2rem;
+            border: 1px solid rgba(99, 102, 241, 0.1);
+        }
+        .welcome-perks-title {
+            font-size: 0.9rem; font-weight: 700; color: var(--primary);
+            text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;
+        }
+        .welcome-perks-list {
+            display: flex; flex-direction: column; gap: 0.75rem;
+        }
+        .welcome-perk-item {
+            display: flex; align-items: center; gap: 12px;
+            font-size: 0.95rem; color: var(--text-main); font-weight: 500;
+        }
+        .welcome-perk-icon {
+            width: 24px; height: 24px; border-radius: 50%;
+            background: var(--primary-gradient); color: white;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; font-size: 12px; font-weight: 700;
+        }
+        
+        .welcome-steps {
+            margin-bottom: 2rem;
+        }
+        .welcome-steps-title {
+            font-size: 0.9rem; font-weight: 700; color: var(--text-main);
+            text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;
+        }
+        .welcome-steps-list {
+            display: flex; flex-direction: column; gap: 0.75rem;
+        }
+        .welcome-step-item {
+            display: flex; align-items: flex-start; gap: 12px;
+            font-size: 0.95rem; color: var(--text-main); line-height: 1.5;
+        }
+        .welcome-step-number {
+            width: 28px; height: 28px; border-radius: 50%;
+            background: var(--primary); color: white;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; font-size: 0.85rem; font-weight: 700;
+        }
+        
+        .welcome-language-section {
+            margin-bottom: 2rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0;
+            position: relative;
+        }
+        .welcome-language-row {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start;
+        }
+        .welcome-language-col {
+            display: flex; flex-direction: column;
+        }
+        .welcome-language-title {
+            font-size: 0.9rem; font-weight: 700; color: var(--text-main);
+            text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;
+        }
+        .welcome-lang-button {
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px 16px; border: 1px solid #e2e8f0; border-radius: 12px;
+            background: white; cursor: pointer; transition: all 0.2s;
+            width: 100%; justify-content: space-between;
+        }
+        .welcome-lang-button:hover {
+            border-color: var(--primary); background: #f8fafc;
+        }
+        .welcome-lang-button-content {
+            display: flex; align-items: center;
+        }
+        .welcome-lang-button span {
+            font-size: 0.9rem; font-weight: 600; color: var(--text-main);
+        }
+        .welcome-lang-button-arrow {
+            color: var(--text-sub); font-size: 0.8rem; transition: transform 0.2s;
+        }
+        .welcome-lang-button.active .welcome-lang-button-arrow {
+            transform: rotate(180deg);
+        }
+        
+        .welcome-lang-dropdown {
+            position: absolute; top: 100%; left: 0; right: 0; margin-top: 8px;
+            background: white; border: 1px solid #e2e8f0; border-radius: 12px;
+            box-shadow: 0 10px 30px -5px rgba(0,0,0,0.15);
+            display: none; flex-direction: column; overflow: hidden;
+            z-index: 10; max-height: 300px; overflow-y: auto;
+        }
+        .welcome-checkbox-col {
+            display: flex; flex-direction: column; justify-content: flex-start;
+        }
+        .welcome-checkbox-col-title {
+            font-size: 0.9rem; font-weight: 700; color: var(--text-main);
+            text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;
+        }
+        .welcome-lang-dropdown.show {
+            display: flex;
+        }
+        .welcome-lang-dropdown-item {
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px 16px; cursor: pointer; transition: all 0.2s;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .welcome-lang-dropdown-item:last-child {
+            border-bottom: none;
+        }
+        .welcome-lang-dropdown-item:hover {
+            background: #f8fafc;
+        }
+        .welcome-lang-dropdown-item.selected {
+            background: #eef2ff;
+        }
+        .welcome-lang-dropdown-item span {
+            font-size: 0.9rem; font-weight: 500; color: var(--text-main);
+            flex: 1;
+        }
+        .welcome-lang-dropdown-item .check-icon {
+            color: var(--primary); font-size: 1rem; font-weight: 700;
+            opacity: 0; transition: opacity 0.2s;
+        }
+        .welcome-lang-dropdown-item.selected .check-icon {
+            opacity: 1;
+        }
+        
+        .welcome-checkbox-wrapper {
+            display: flex; align-items: center; gap: 12px;
+            cursor: pointer;
+        }
+        .welcome-checkbox-toggle {
+            width: 44px; height: 26px; background: #cbd5e1;
+            border-radius: 13px; position: relative; transition: background 0.3s;
+            flex-shrink: 0;
+        }
+        .welcome-checkbox-toggle.checked {
+            background: var(--primary);
+        }
+        .welcome-checkbox-toggle::after {
+            content: ''; position: absolute; top: 2px; left: 2px;
+            width: 22px; height: 22px; background: white;
+            border-radius: 50%; transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .welcome-checkbox-toggle.checked::after {
+            transform: translateX(18px);
+        }
+        .welcome-checkbox-label {
+            font-size: 0.9rem; color: var(--text-main); font-weight: 500;
+            user-select: none; flex: 1;
+        }
+        
+        .welcome-modal-actions {
+            display: flex; gap: 12px;
+        }
+        .welcome-btn-primary {
+            flex: 1; background: var(--primary-gradient); color: white;
+            padding: 1rem; border-radius: 12px; border: none;
+            font-weight: 700; font-size: 1rem; cursor: pointer;
+            transition: all 0.3s; box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+        .welcome-btn-primary:hover {
+            transform: translateY(-2px); box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .welcome-modal-content { padding: 1.5rem; width: 95%; }
+            .welcome-language-row { grid-template-columns: 1fr; gap: 1.5rem; }
+        }
+
         /* Animations */
         @keyframes floatUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -576,29 +919,126 @@
 </head>
 <body>
 
+    <!-- Welcome Modal -->
+    <div id="welcomeModal" class="welcome-modal-overlay" onclick="closeWelcomeModalOnOutside(event)">
+        <div class="welcome-modal-content" onclick="event.stopPropagation()">
+            <div class="welcome-modal-header">
+                <h2 class="welcome-modal-title">Welcome</h2>
+            </div>
+
+            <div class="welcome-perks">
+                <div class="welcome-perks-title">Why Choose QRExpress?</div>
+                <div class="welcome-perks-list">
+                    <div class="welcome-perk-item">
+                        <div class="welcome-perk-icon">✓</div>
+                        <span>No Registration Required</span>
+                    </div>
+                    <div class="welcome-perk-item">
+                        <div class="welcome-perk-icon">✓</div>
+                        <span>Completely Free - No Paywall</span>
+                    </div>
+                    <div class="welcome-perk-item">
+                        <div class="welcome-perk-icon">✓</div>
+                        <span>Easy to Use - Create in Seconds</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="welcome-steps">
+                <div class="welcome-steps-title">How to Use</div>
+                <div class="welcome-steps-list">
+                    <div class="welcome-step-item">
+                        <div class="welcome-step-number">1</div>
+                        <span>Choose the QR code type</span>
+                    </div>
+                    <div class="welcome-step-item">
+                        <div class="welcome-step-number">2</div>
+                        <span>Add your information</span>
+                    </div>
+                    <div class="welcome-step-item">
+                        <div class="welcome-step-number">3</div>
+                        <span>Modify design (optional)</span>
+                    </div>
+                    <div class="welcome-step-item">
+                        <div class="welcome-step-number">4</div>
+                        <span>Preview your QR code</span>
+                    </div>
+                    <div class="welcome-step-item">
+                        <div class="welcome-step-number">5</div>
+                        <span>Choose template and download</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="welcome-language-section">
+                <div class="welcome-language-row">
+                    <div class="welcome-language-col">
+                        <div class="welcome-language-title">Choose Your Language</div>
+                        <div class="welcome-lang-button" id="welcomeLangButton" onclick="toggleWelcomeLangDropdown(event)">
+                            <div class="welcome-lang-button-content">
+                                <span id="welcomeLangName">English</span>
+                            </div>
+                            <span class="welcome-lang-button-arrow">▼</span>
+                        </div>
+                        <div class="welcome-lang-dropdown" id="welcomeLangDropdown">
+                            <div class="welcome-lang-dropdown-item selected" data-lang="en" onclick="selectWelcomeLang('en')">
+                                <span>English</span>
+                                <span class="check-icon">✓</span>
+                            </div>
+                            <div class="welcome-lang-dropdown-item" data-lang="ro" onclick="selectWelcomeLang('ro')">
+                                <span>Română</span>
+                                <span class="check-icon">✓</span>
+                            </div>
+                            <div class="welcome-lang-dropdown-item" data-lang="it" onclick="selectWelcomeLang('it')">
+                                <span>Italiano</span>
+                                <span class="check-icon">✓</span>
+                            </div>
+                            <div class="welcome-lang-dropdown-item" data-lang="ru" onclick="selectWelcomeLang('ru')">
+                                <span>Русский</span>
+                                <span class="check-icon">✓</span>
+                            </div>
+                            <div class="welcome-lang-dropdown-item" data-lang="uk" onclick="selectWelcomeLang('uk')">
+                                <span>Українська</span>
+                                <span class="check-icon">✓</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="welcome-checkbox-col">
+                        <div class="welcome-checkbox-col-title">Preferences</div>
+                        <div class="welcome-checkbox-wrapper" onclick="toggleWelcomeCheckbox()">
+                            <div class="welcome-checkbox-toggle" id="welcomeCheckbox"></div>
+                            <label class="welcome-checkbox-label">Don't show this message again</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="welcome-modal-actions">
+                <button class="welcome-btn-primary" onclick="closeWelcomeModal()">Get Started</button>
+            </div>
+        </div>
+    </div>
+
     <div class="ambient-bg"></div>
 
     <!-- Header -->
     <header class="brand-header">
         <div class="brand-logo">
-            <div class="logo-box">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><rect x="7" y="7" width="3" height="3" rx="1"/><rect x="14" y="7" width="3" height="3" rx="1"/><rect x="7" y="14" width="3" height="3" rx="1"/><path d="M14 17h3"/></svg>
-            </div>
             <div class="brand-text">QR express</div>
+            <div class="brand-tagline">Making QR's accessible to everyone</div>
         </div>
 
         <div class="nav-items">
             <div class="lang-dropdown">
                 <button class="lang-btn" onclick="toggleLangMenu(event)">
-                    <img id="currentFlag" src="https://flagcdn.com/w40/gb.png" style="border-radius:2px" alt="English">
                     <span id="currentCode">EN</span>
                 </button>
                 <div class="dropdown-menu" id="langMenu">
-                    <a href="#" class="lang-option" onclick="selectLang('gb', 'EN')"><img src="https://flagcdn.com/w40/gb.png"> English</a>
-                    <a href="#" class="lang-option" onclick="selectLang('ro', 'RO')"><img src="https://flagcdn.com/w40/ro.png"> Română</a>
-                    <a href="#" class="lang-option" onclick="selectLang('it', 'IT')"><img src="https://flagcdn.com/w40/it.png"> Italiano</a>
-                    <a href="#" class="lang-option" onclick="selectLang('ru', 'RU')"><img src="https://flagcdn.com/w40/ru.png"> Русский</a>
-                    <a href="#" class="lang-option" onclick="selectLang('ua', 'UA')"><img src="https://flagcdn.com/w40/ua.png"> Українська</a>
+                    <a href="#" class="lang-option" onclick="selectLang('gb', 'EN')">English</a>
+                    <a href="#" class="lang-option" onclick="selectLang('ro', 'RO')">Română</a>
+                    <a href="#" class="lang-option" onclick="selectLang('it', 'IT')">Italiano</a>
+                    <a href="#" class="lang-option" onclick="selectLang('ru', 'RU')">Русский</a>
+                    <a href="#" class="lang-option" onclick="selectLang('ua', 'UA')">Українська</a>
                 </div>
             </div>
         </div>
@@ -642,46 +1082,57 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
                     Text
                 </button>
+                <button class="tab-btn" onclick="switchTab('whatsapp')" data-i18n="whatsapp">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.632.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                    WhatsApp
+                </button>
             </div>
 
             <!-- FORMS -->
             <div id="form-link" class="form-group active">
-                <label data-i18n="website_url">Website URL</label>
-                <input type="url" id="urlInput" placeholder="https://example.com" oninput="updateQR()">
+                <label data-i18n="website_url">Website URL <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(The web address you want to link to)</span></label>
+                <input type="url" id="urlInput" oninput="updateQR()">
             </div>
 
             <div id="form-wifi" class="form-group">
-                <label data-i18n="network_ssid">Network SSID <div class="tooltip-wrapper"><span class="tooltip-icon">?</span><div class="tooltip-content" data-i18n="ssid_tooltip">Exact WiFi name</div></div></label>
-                <input type="text" id="ssidInput" placeholder="WiFi Name" oninput="updateQR()">
+                <label data-i18n="network_ssid">Network SSID <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(The WiFi network name)</span></label>
+                <input type="text" id="ssidInput" oninput="updateQR()">
                 <div class="row-2" style="margin-top:15px">
-                    <div><label data-i18n="password">Password</label><input type="text" id="passInput" placeholder="Password" oninput="updateQR()"></div>
-                    <div><label data-i18n="encryption">Encryption</label><select id="encInput" onchange="updateQR()"><option value="WPA">WPA/WPA2</option><option value="WEP">WEP</option><option value="nopass">None</option></select></div>
+                    <div><label data-i18n="password">Password <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(WiFi password)</span></label><input type="text" id="passInput" oninput="updateQR()"></div>
+                    <div><label data-i18n="encryption">Encryption <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(Security type)</span></label><select id="encInput" onchange="updateQR()"><option value="WPA">WPA/WPA2</option><option value="WEP">WEP</option><option value="nopass">None</option></select></div>
                 </div>
             </div>
 
             <div id="form-email" class="form-group">
-                <label data-i18n="email_address">Email Address</label><input type="email" id="emailTo" placeholder="recipient@example.com" oninput="updateQR()">
-                <div style="margin-top:15px"><label data-i18n="subject">Subject</label><input type="text" id="emailSub" placeholder="Inquiry" oninput="updateQR()"></div>
-                <div style="margin-top:15px"><label data-i18n="body">Body</label><textarea id="emailBody" placeholder="Message content..." oninput="updateQR()"></textarea></div>
+                <label data-i18n="email_address">Email Address <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(Recipient's email)</span></label><input type="email" id="emailTo" oninput="updateQR()">
+                <div style="margin-top:15px"><label data-i18n="subject">Subject <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(Email subject line)</span></label><input type="text" id="emailSub" oninput="updateQR()"></div>
+                <div style="margin-top:15px"><label data-i18n="body">Body <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(Email message content)</span></label><textarea id="emailBody" oninput="updateQR()"></textarea></div>
             </div>
 
-            <div id="form-phone" class="form-group"><label data-i18n="phone_number">Phone Number</label><input type="tel" id="telInput" placeholder="+1 555 123 4567" oninput="updateQR()"></div>
+            <div id="form-phone" class="form-group"><label data-i18n="phone_number">Phone Number <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(Include country code, e.g., +1)</span></label><input type="tel" id="telInput" oninput="updateQR()"></div>
 
             <div id="form-sms" class="form-group">
-                <label data-i18n="phone_number">Phone Number</label><input type="tel" id="smsPhone" placeholder="+1 555 123 4567" oninput="updateQR()">
-                <div style="margin-top:15px"><label data-i18n="message">Message</label><textarea id="smsBody" placeholder="I'm interested in..." oninput="updateQR()"></textarea></div>
+                <label data-i18n="phone_number">Phone Number <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(Include country code, e.g., +1)</span></label><input type="tel" id="smsPhone" oninput="updateQR()">
+                <div style="margin-top:15px"><label data-i18n="message">Message <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(SMS text content)</span></label><textarea id="smsBody" oninput="updateQR()"></textarea></div>
             </div>
 
             <div id="form-geo" class="form-group">
-                <div class="row-2"><div><label data-i18n="latitude">Latitude</label><input type="text" id="geoLat" placeholder="40.7128" oninput="updateQR()"></div><div><label data-i18n="longitude">Longitude</label><input type="text" id="geoLong" placeholder="-74.0060" oninput="updateQR()"></div></div>
+                <div class="row-2"><div><label data-i18n="latitude">Latitude <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(North/South coordinate)</span></label><input type="text" id="geoLat" oninput="updateQR()"></div><div><label data-i18n="longitude">Longitude <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(East/West coordinate)</span></label><input type="text" id="geoLong" oninput="updateQR()"></div></div>
             </div>
 
             <div id="form-vcard" class="form-group">
-                <label data-i18n="full_name">Full Name</label><input type="text" id="vName" placeholder="John Doe" oninput="updateQR()">
-                <div class="row-2" style="margin-top:15px"><div><label data-i18n="phone">Phone</label><input type="text" id="vPhone" placeholder="+1 555..." oninput="updateQR()"></div><div><label data-i18n="email">Email</label><input type="email" id="vEmail" placeholder="john@..." oninput="updateQR()"></div></div>
+                <label data-i18n="full_name">Full Name <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(Contact's full name)</span></label><input type="text" id="vName" oninput="updateQR()">
+                <div class="row-2" style="margin-top:15px"><div><label data-i18n="phone">Phone <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(Include country code)</span></label><input type="text" id="vPhone" oninput="updateQR()"></div><div><label data-i18n="email">Email <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(Contact's email)</span></label><input type="email" id="vEmail" oninput="updateQR()"></div></div>
             </div>
 
-            <div id="form-text" class="form-group"><label data-i18n="plain_text">Plain Text</label><textarea id="textInput" placeholder="Type your message..." oninput="updateQR()"></textarea></div>
+            <div id="form-text" class="form-group"><label data-i18n="plain_text">Plain Text <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(Any text content)</span></label><textarea id="textInput" oninput="updateQR()"></textarea></div>
+
+            <div id="form-whatsapp" class="form-group">
+                <label data-i18n="phone_number">Phone Number <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(Include country code, e.g., +1)</span></label>
+                <input type="tel" id="whatsappPhone" oninput="updateQR()">
+                <div style="margin-top:15px"><label data-i18n="message">Message <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(WhatsApp message content)</span></label><textarea id="whatsappMessage" oninput="updateQR()"></textarea></div>
+            </div>
+
 
             <!-- Customization Section -->
             <div class="design-section">
@@ -813,7 +1264,144 @@
         </div>
     </div>
 
-    <footer class="footer-text" data-i18n="copyright">© 2026 QR express. All rights reserved.</footer>
+    <footer style="padding: 2rem 1rem; text-align: center; border-top: 1px solid #e2e8f0; margin-top: 3rem;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem 2rem; margin-bottom: 2rem;">
+            <button onclick="openFooterModal('terms')" class="footer-btn">Terms of Service</button>
+            <button onclick="openFooterModal('contact')" class="footer-btn">Contact</button>
+            <button onclick="openFooterModal('tools')" class="footer-btn">Other Tools</button>
+            <button onclick="openFooterModal('changelog')" class="footer-btn">Changelog</button>
+        </div>
+        <div style="font-size: 0.8rem; color: var(--text-sub); font-weight: 600;">© 2026 QR express / Proudly made in EU</div>
+    </footer>
+
+    <!-- Footer Modals -->
+    <!-- Terms of Service Modal -->
+    <div id="footerModalTerms" class="footer-modal-overlay" onclick="closeFooterModalOnOutside(event, 'terms')">
+        <div class="footer-modal-content" onclick="event.stopPropagation()">
+            <button class="footer-modal-close" onclick="closeFooterModal('terms')">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <h2 class="footer-modal-title">Terms of Service</h2>
+            <div class="footer-modal-disclaimer">Note: This content is displayed in English only.</div>
+            <div class="footer-modal-body">
+                <p><strong>Last Updated:</strong> January 2026</p>
+                <p>Welcome to QRExpress. By using our service, you agree to the following terms:</p>
+                <h3 style="font-size: 1.2rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.75rem;">1. Service Usage</h3>
+                <p>QRExpress provides a free QR code generation service. You may use the service to create QR codes for personal or commercial purposes.</p>
+                <h3 style="font-size: 1.2rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.75rem;">2. User Responsibilities</h3>
+                <p>You are responsible for the content you encode in QR codes. Do not use our service to create QR codes containing illegal, harmful, or offensive content.</p>
+                <h3 style="font-size: 1.2rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.75rem;">3. Privacy</h3>
+                <p>We do not store or track the content of your QR codes. All processing is done locally in your browser.</p>
+                <h3 style="font-size: 1.2rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.75rem;">4. Limitation of Liability</h3>
+                <p>QRExpress is provided "as is" without warranties. We are not liable for any damages resulting from the use of our service.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="footerModalContact" class="footer-modal-overlay" onclick="closeFooterModalOnOutside(event, 'contact')">
+        <div class="footer-modal-content" onclick="event.stopPropagation()">
+            <button class="footer-modal-close" onclick="closeFooterModal('contact')">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <h2 class="footer-modal-title">Contact Us</h2>
+            <div class="footer-modal-disclaimer">Note: This content is displayed in English only.</div>
+            <div class="footer-modal-body">
+                <p>We'd love to hear from you! Get in touch through any of the following channels:</p>
+                <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem;">
+                    <a href="https://facebook.com" target="_blank" style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8fafc; border-radius: 12px; text-decoration: none; transition: all 0.2s;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#1877F2">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                        <div>
+                            <div style="font-weight: 600; color: var(--text-main);">Facebook</div>
+                            <div style="font-size: 0.85rem; color: var(--text-sub);">Connect with us on Facebook</div>
+                        </div>
+                    </a>
+                    <a href="mailto:contact@qrexpress.com" style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8fafc; border-radius: 12px; text-decoration: none; transition: all 0.2s;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <div>
+                            <div style="font-weight: 600; color: var(--text-main);">Email</div>
+                            <div style="font-size: 0.85rem; color: var(--text-sub);">contact@qrexpress.com</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Other Tools Modal -->
+    <div id="footerModalTools" class="footer-modal-overlay" onclick="closeFooterModalOnOutside(event, 'tools')">
+        <div class="footer-modal-content" onclick="event.stopPropagation()">
+            <button class="footer-modal-close" onclick="closeFooterModal('tools')">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <h2 class="footer-modal-title">Other Tools</h2>
+            <div class="footer-modal-disclaimer">Note: This content is displayed in English only.</div>
+            <div class="footer-modal-body">
+                <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem;">
+                    <a href="#" target="_blank" style="display: flex; align-items: center; gap: 1rem; padding: 1.25rem; background: #f8fafc; border-radius: 12px; text-decoration: none; transition: all 0.2s; border: 2px solid transparent;">
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600; color: var(--text-main); font-size: 1.1rem; margin-bottom: 0.25rem;">CV Builder</div>
+                            <div style="font-size: 0.9rem; color: var(--text-sub);">Create professional resumes and CVs in minutes</div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </a>
+                    <a href="#" target="_blank" style="display: flex; align-items: center; gap: 1rem; padding: 1.25rem; background: #f8fafc; border-radius: 12px; text-decoration: none; transition: all 0.2s; border: 2px solid transparent;">
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600; color: var(--text-main); font-size: 1.1rem; margin-bottom: 0.25rem;">Engineering Tools</div>
+                            <div style="font-size: 0.9rem; color: var(--text-sub);">A collection of mini-tools for engineers and developers</div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Changelog Modal -->
+    <div id="footerModalChangelog" class="footer-modal-overlay" onclick="closeFooterModalOnOutside(event, 'changelog')">
+        <div class="footer-modal-content" onclick="event.stopPropagation()">
+            <button class="footer-modal-close" onclick="closeFooterModal('changelog')">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <h2 class="footer-modal-title">Changelog</h2>
+            <div class="footer-modal-disclaimer">Note: This content is displayed in English only.</div>
+            <div class="footer-modal-body">
+                <div style="margin-top: 2rem;">
+                    <div style="padding: 1rem 0; border-bottom: 1px solid #e2e8f0;">
+                        <div style="font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">Version 1.0.0 - January 2026</div>
+                        <ul style="margin-left: 1.5rem; color: var(--text-sub); line-height: 1.8;">
+                            <li>Initial release of QRExpress</li>
+                            <li>Support for multiple QR code types (URL, WiFi, Email, SMS, Phone, Location, Contact, Text, WhatsApp)</li>
+                            <li>Customizable design options (colors, dot styles, corners)</li>
+                            <li>Logo branding support</li>
+                            <li>Multiple frame templates</li>
+                            <li>High-quality download options</li>
+                            <li>Multi-language support (English, Romanian, Italian, Russian, Ukrainian)</li>
+                        </ul>
+                    </div>
+                    <div style="padding: 1rem 0; margin-top: 1rem; text-align: center; color: var(--text-sub); font-style: italic;">
+                        More updates coming soon...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- MODAL -->
     <div id="downloadModal" class="modal-overlay" onclick="closeModalOutside(event)">
@@ -874,6 +1462,34 @@
                                 <div class="template-preview-icon tp-event"></div>
                                 <div class="template-name" data-i18n="event">Event</div>
                             </div>
+                            <div class="template-card" onclick="selectTemplate(this, 'review')">
+                                <div class="template-preview-icon tp-review"></div>
+                                <div class="template-name" data-i18n="leave_review">Leave a Review</div>
+                            </div>
+                            <div class="template-card" onclick="selectTemplate(this, 'order')">
+                                <div class="template-preview-icon tp-order"></div>
+                                <div class="template-name" data-i18n="order_here">Order Here</div>
+                            </div>
+                            <div class="template-card" onclick="selectTemplate(this, 'pay')">
+                                <div class="template-preview-icon tp-pay"></div>
+                                <div class="template-name" data-i18n="pay_here">Pay Here</div>
+                            </div>
+                            <div class="template-card" onclick="selectTemplate(this, 'community')">
+                                <div class="template-preview-icon tp-community"></div>
+                                <div class="template-name" data-i18n="join_community">Join Our Community</div>
+                            </div>
+                            <div class="template-card" onclick="selectTemplate(this, 'video')">
+                                <div class="template-preview-icon tp-video"></div>
+                                <div class="template-name" data-i18n="watch_video">Watch Video</div>
+                            </div>
+                            <div class="template-card" onclick="selectTemplate(this, 'book')">
+                                <div class="template-preview-icon tp-book"></div>
+                                <div class="template-name" data-i18n="book_now">Book Now</div>
+                            </div>
+                            <div class="template-card" onclick="selectTemplate(this, 'report')">
+                                <div class="template-preview-icon tp-report"></div>
+                                <div class="template-name" data-i18n="report_issue">Report Issue</div>
+                            </div>
                         </div>
                     </div>
 
@@ -920,7 +1536,9 @@
             phone: '<svg fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>',
             map: '<svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>',
             contact: '<svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>',
-            text: '<svg fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>'
+            text: '<svg fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>',
+            whatsapp: '<svg fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.632.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>',
+            multilink: '<svg fill="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>'
         };
 
         function initQR() {
@@ -970,6 +1588,11 @@
                 return `BEGIN:VCARD\nVERSION:3.0\nN:${n}\nTEL:${p}\nEMAIL:${e}\nEND:VCARD`;
             }
             if (currentType === 'text') return document.getElementById('textInput').value || "Welcome";
+            if (currentType === 'whatsapp') {
+                const phone = document.getElementById('whatsappPhone').value || "+15551234567";
+                const msg = encodeURIComponent(document.getElementById('whatsappMessage').value || "");
+                return `https://wa.me/${phone.replace(/[^0-9]/g, '')}${msg ? '?text=' + msg : ''}`;
+            }
         }
 
         function setTheme(element, c1, c2) {
@@ -1107,6 +1730,7 @@
             updateQR();
         }
 
+
         function toggleDesign() {
             const wrapper = document.getElementById('designWrapper');
             const toggleText = document.getElementById('designToggleText');
@@ -1120,7 +1744,6 @@
         }
 
         function selectLang(countryCode, label) {
-            document.getElementById('currentFlag').src = `https://flagcdn.com/w40/${countryCode}.png`;
             document.getElementById('currentCode').innerText = label;
             document.getElementById('langMenu').classList.remove('show');
             
@@ -1211,35 +1834,48 @@
             } 
             else if(currentType === 'wifi') {
                 const ssid = document.getElementById('ssidInput').value || "Network";
-                html = `<div class="sheet-icon">${icons.wifi}</div><div class="sheet-desc">Join Wi-Fi Network <strong>"${ssid}"</strong>?</div>`;
+                const wifiText = (i18n && i18n.t ? i18n.t('join_wifi') : 'Join Wi-Fi Network "{{ssid}}"?' ).replace('{{ssid}}', ssid);
+                html = `<div class="sheet-icon">${icons.wifi}</div><div class="sheet-desc">${wifiText}</div>`;
                 buttonsHtml = `<button class="ios-action-btn primary">${i18n && i18n.t ? i18n.t('join_network') : 'Join Network'}</button><button class="ios-action-btn secondary">${i18n && i18n.t ? i18n.t('share_password') : 'Share Password'}</button>`;
             } 
             else if(currentType === 'email') {
                 const mail = document.getElementById('emailTo').value || "email@example.com";
-                html = `<div class="sheet-icon">${icons.mail}</div><div class="sheet-desc">Compose email to <strong>${mail}</strong></div>`;
+                const emailText = (i18n && i18n.t ? i18n.t('compose_email') : 'Compose email to') + ' <strong>' + mail + '</strong>';
+                html = `<div class="sheet-icon">${icons.mail}</div><div class="sheet-desc">${emailText}</div>`;
                 buttonsHtml = `<button class="ios-action-btn primary">${i18n && i18n.t ? i18n.t('open_mail') : 'Open Mail'}</button>`;
             } 
             else if(currentType === 'sms') {
                 const sms = document.getElementById('smsPhone').value || "123-456";
-                html = `<div class="sheet-icon">${icons.sms}</div><div class="sheet-desc">Text Message to <strong>${sms}</strong></div>`;
+                const smsText = (i18n && i18n.t ? i18n.t('text_message') : 'Text Message to') + ' <strong>' + sms + '</strong>';
+                html = `<div class="sheet-icon">${icons.sms}</div><div class="sheet-desc">${smsText}</div>`;
                 buttonsHtml = `<button class="ios-action-btn primary">${i18n && i18n.t ? i18n.t('open_messages') : 'Open Messages'}</button>`;
             }
             else if(currentType === 'phone') {
                 const ph = document.getElementById('telInput').value || "555-0123";
-                html = `<div class="sheet-icon">${icons.phone}</div><div class="sheet-desc">Call <strong>${ph}</strong>?</div>`;
+                const callText = (i18n && i18n.t ? i18n.t('call_to') : 'Call') + ' <strong>' + ph + '</strong>?';
+                html = `<div class="sheet-icon">${icons.phone}</div><div class="sheet-desc">${callText}</div>`;
                 buttonsHtml = `<button class="ios-action-btn primary">${i18n && i18n.t ? i18n.t('call') : 'Call'}</button>`;
             }
             else if(currentType === 'geo') {
-                html = `<div class="sheet-icon">${icons.map}</div><div class="sheet-desc">View Location in Maps</div>`;
+                const geoText = i18n && i18n.t ? i18n.t('view_location_maps') : 'View Location in Maps';
+                html = `<div class="sheet-icon">${icons.map}</div><div class="sheet-desc">${geoText}</div>`;
                 buttonsHtml = `<button class="ios-action-btn primary">${i18n && i18n.t ? i18n.t('open_maps') : 'Open Maps'}</button>`;
             }
             else if(currentType === 'vcard') {
                 const name = document.getElementById('vName').value || "Contact";
-                html = `<div class="sheet-icon">${icons.contact}</div><div class="sheet-desc">Add <strong>${name}</strong> to Contacts</div>`;
+                const contactText = (i18n && i18n.t ? i18n.t('add_to_contacts') : 'Add {{name}} to Contacts').replace('{{name}}', name);
+                html = `<div class="sheet-icon">${icons.contact}</div><div class="sheet-desc">${contactText}</div>`;
                 buttonsHtml = `<button class="ios-action-btn primary">${i18n && i18n.t ? i18n.t('save_contact') : 'Save Contact'}</button>`;
             }
+            else if(currentType === 'whatsapp') {
+                const phone = document.getElementById('whatsappPhone').value || "+1234567890";
+                const whatsappText = (i18n && i18n.t ? i18n.t('message_to') : 'Message') + ' <strong>' + phone + '</strong>';
+                html = `<div class="sheet-icon">${icons.whatsapp}</div><div class="sheet-desc">${whatsappText}</div>`;
+                buttonsHtml = `<button class="ios-action-btn primary">${i18n && i18n.t ? i18n.t('open_whatsapp') : 'Open WhatsApp'}</button>`;
+            }
             else {
-                html = `<div class="sheet-icon">${icons.text}</div><div class="sheet-desc">Plain Text detected.</div>`;
+                const plainText = i18n && i18n.t ? i18n.t('plain_text_detected') : 'Plain Text detected.';
+                html = `<div class="sheet-icon">${icons.text}</div><div class="sheet-desc">${plainText}</div>`;
                 buttonsHtml = `<button class="ios-action-btn primary">${i18n && i18n.t ? i18n.t('search_web') : 'Search Web'}</button><button class="ios-action-btn secondary">${i18n && i18n.t ? i18n.t('copy') : 'Copy'}</button>`;
             }
 
@@ -1300,6 +1936,13 @@
                 else if (currentTemplate === 'social') { frameText = (i18n && i18n.t ? i18n.t('connect_with_us_text') : "Connect With Us"); frameColor = "#8b5cf6"; }
                 else if (currentTemplate === 'product') { frameText = (i18n && i18n.t ? i18n.t('product_details_text') : "Product Details"); frameColor = "#3b82f6"; }
                 else if (currentTemplate === 'event') { frameText = (i18n && i18n.t ? i18n.t('event_checkin_text') : "Event Check-In"); frameColor = "#f97316"; }
+                else if (currentTemplate === 'review') { frameText = (i18n && i18n.t ? i18n.t('leave_review_text') : "Leave a Review"); frameColor = "#f59e0b"; }
+                else if (currentTemplate === 'order') { frameText = (i18n && i18n.t ? i18n.t('order_here_text') : "Order Here"); frameColor = "#10b981"; }
+                else if (currentTemplate === 'pay') { frameText = (i18n && i18n.t ? i18n.t('pay_here_text') : "Pay Here"); frameColor = "#22c55e"; }
+                else if (currentTemplate === 'community') { frameText = (i18n && i18n.t ? i18n.t('join_community_text') : "Join Our Community"); frameColor = "#6366f1"; }
+                else if (currentTemplate === 'video') { frameText = (i18n && i18n.t ? i18n.t('watch_video_text') : "Watch Video"); frameColor = "#ef4444"; }
+                else if (currentTemplate === 'book') { frameText = (i18n && i18n.t ? i18n.t('book_now_text') : "Book Now"); frameColor = "#8b5cf6"; }
+                else if (currentTemplate === 'report') { frameText = (i18n && i18n.t ? i18n.t('report_issue_text') : "Report Issue"); frameColor = "#f97316"; }
             }
 
             const finalWidth = outputSize + (padding * 2);
@@ -1387,7 +2030,144 @@
             link.click();
         }
 
-        window.onload = initQR;
+        /* --- WELCOME MODAL LOGIC --- */
+        let selectedWelcomeLang = 'en'; // Store selected language, default English
+
+        function showWelcomeModal() {
+            const modal = document.getElementById('welcomeModal');
+            modal.style.display = 'flex';
+            setTimeout(() => modal.classList.add('show'), 10);
+        }
+
+        function closeWelcomeModal() {
+            const modal = document.getElementById('welcomeModal');
+            const checkbox = document.getElementById('welcomeCheckbox');
+            
+            // Save preference if checkbox is checked
+            if (checkbox.classList.contains('checked')) {
+                localStorage.setItem('qrexpress_welcome_seen', 'true');
+            }
+            
+            // Apply the selected language only when Get Started is clicked
+            if (window.i18n) {
+                window.i18n.switchLanguage(selectedWelcomeLang);
+            } else {
+                window.location.hash = `#${selectedWelcomeLang}`;
+                localStorage.setItem('qrexpress_lang', selectedWelcomeLang);
+            }
+            
+            modal.classList.remove('show');
+            setTimeout(() => modal.style.display = 'none', 400);
+        }
+
+        function toggleWelcomeCheckbox() {
+            const checkbox = document.getElementById('welcomeCheckbox');
+            checkbox.classList.toggle('checked');
+        }
+
+        function toggleWelcomeLangDropdown(event) {
+            event.stopPropagation();
+            const dropdown = document.getElementById('welcomeLangDropdown');
+            const button = document.getElementById('welcomeLangButton');
+            const isOpen = dropdown.classList.contains('show');
+            
+            if (isOpen) {
+                dropdown.classList.remove('show');
+                button.classList.remove('active');
+            } else {
+                dropdown.classList.add('show');
+                button.classList.add('active');
+            }
+        }
+
+        function selectWelcomeLang(langCode) {
+            selectedWelcomeLang = langCode;
+            
+            // Update dropdown selection
+            document.querySelectorAll('.welcome-lang-dropdown-item').forEach(item => {
+                item.classList.remove('selected');
+            });
+            const selectedItem = document.querySelector(`.welcome-lang-dropdown-item[data-lang="${langCode}"]`);
+            if (selectedItem) {
+                selectedItem.classList.add('selected');
+            }
+            
+            // Update button display
+            const langMap = {
+                'en': 'English',
+                'ro': 'Română',
+                'it': 'Italiano',
+                'ru': 'Русский',
+                'uk': 'Українська'
+            };
+            
+            const langName = langMap[langCode] || langMap['en'];
+            document.getElementById('welcomeLangName').textContent = langName;
+            
+            // Close dropdown
+            document.getElementById('welcomeLangDropdown').classList.remove('show');
+            document.getElementById('welcomeLangButton').classList.remove('active');
+        }
+
+        function closeWelcomeModalOnOutside(event) {
+            if (event.target === document.getElementById('welcomeModal')) {
+                closeWelcomeModal();
+            }
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('welcomeLangDropdown');
+            const button = document.getElementById('welcomeLangButton');
+            if (dropdown && button && !button.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.classList.remove('show');
+                button.classList.remove('active');
+            }
+        });
+
+        // Check if welcome modal should be shown on page load
+        function checkWelcomeModal() {
+            const welcomeSeen = localStorage.getItem('qrexpress_welcome_seen');
+            if (welcomeSeen !== 'true') {
+                // Set default language to English for modal
+                selectedWelcomeLang = 'en';
+                setTimeout(() => {
+                    showWelcomeModal();
+                }, 500);
+            }
+        }
+
+        // Footer modal functions
+        function openFooterModal(type) {
+            const modal = document.getElementById(`footerModal${type.charAt(0).toUpperCase() + type.slice(1)}`);
+            if (modal) {
+                modal.style.display = 'flex';
+                setTimeout(() => modal.classList.add('show'), 10);
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeFooterModal(type) {
+            const modal = document.getElementById(`footerModal${type.charAt(0).toUpperCase() + type.slice(1)}`);
+            if (modal) {
+                modal.classList.remove('show');
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = '';
+                }, 300);
+            }
+        }
+
+        function closeFooterModalOnOutside(event, type) {
+            if (event.target.classList.contains('footer-modal-overlay')) {
+                closeFooterModal(type);
+            }
+        }
+
+        window.onload = function() {
+            initQR();
+            checkWelcomeModal();
+        };
     </script>
 </body>
 </html>
