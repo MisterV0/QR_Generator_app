@@ -1,4 +1,16 @@
 
-b) let's correct and improve all the translations (manual by Valeriia)
+b) add 2 more templates
+
+e) Just "Download" , without "Download QR" 
+f) In Romanian / Italian / RU / Ukrainian from template, shrink text "alatura-te comunitatii noastre" with something else, shorter
+g) on mobile, the live preview of the QR code isn't entirely visible, we shall shrink it a little and center so that we make sure that 
+it's entirely visible
+
+h) let's correct and improve all the translations (manual by Valeriia)
  
-h) add german language (hard, ask Valeriia) (lateer)
+
+add german language (hard, ask Valeriia) (lateer)
+
+Release notes:
+- Fixed langauge dropdown in welcome modal
+- UI improvement

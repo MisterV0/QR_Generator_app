@@ -46,7 +46,7 @@
   "good": "Добре",
   "risky": "Ризиковано",
   "unscannable": "Не сканується",
-  "download_qr": "ЗАВАНТАЖИТИ QR КОД",
+  "download_qr": "ЗАВАНТАЖИТИ",
   "simulate_scan": "СИМУЛЮВАТИ СКАНУВАННЯ",
   "close_simulator": "Закрити Симулятор",
   "download_options": "Параметри Завантаження",
@@ -136,11 +136,15 @@
   "pay_here": "Оплатити Тут",
   "pay_here_text": "Оплатити Тут",
   "join_community": "Приєднатися до Спільноти",
-  "join_community_text": "Приєднатися до Спільноти",
+  "join_community_text": "Приєднатися",
   "watch_video": "Дивитися Відео",
   "watch_video_text": "Дивитися Відео",
   "book_now": "Забронювати Зараз",
   "book_now_text": "Забронювати Зараз",
   "report_issue": "Повідомити про Проблему",
-  "report_issue_text": "Повідомити про Проблему"
+  "report_issue_text": "Повідомити про Проблему",
+  "download_digital": "Завантажити Файл",
+  "download_digital_text": "Завантажити Файл",
+  "special_promo": "Спеціальна Пропозиція",
+  "special_promo_text": "Спеціальна Пропозиція"
 }

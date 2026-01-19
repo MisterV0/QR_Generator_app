@@ -46,7 +46,7 @@
   "good": "Bun",
   "risky": "Riscant",
   "unscannable": "Nu se poate scana",
-  "download_qr": "DESCARCĂ COD QR",
+  "download_qr": "DESCARCĂ",
   "simulate_scan": "SIMULEAZĂ SCANARE",
   "close_simulator": "Închide Simulator",
   "download_options": "Opțiuni Descărcare",
@@ -136,11 +136,15 @@
   "pay_here": "Plătește Aici",
   "pay_here_text": "Plătește Aici",
   "join_community": "Alătură-te Comunității Noastre",
-  "join_community_text": "Alătură-te Comunității Noastre",
+  "join_community_text": "Alătură-te Comunității",
   "watch_video": "Urmărește Video",
   "watch_video_text": "Urmărește Video",
   "book_now": "Rezervă Acum",
   "book_now_text": "Rezervă Acum",
   "report_issue": "Raportează Problemă",
-  "report_issue_text": "Raportează Problemă"
+  "report_issue_text": "Raportează Problemă",
+  "download_digital": "Descarcă Fișier",
+  "download_digital_text": "Descarcă Fișier",
+  "special_promo": "Ofertă Specială",
+  "special_promo_text": "Ofertă Specială"
 }

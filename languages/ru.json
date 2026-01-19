@@ -46,7 +46,7 @@
   "good": "Хороший",
   "risky": "Рискованный",
   "unscannable": "Не сканируемо",
-  "download_qr": "СКАЧАТЬ QR КОД",
+  "download_qr": "СКАЧАТЬ",
   "simulate_scan": "СИМУЛИРОВАТЬ СКАНИРОВАНИЕ",
   "close_simulator": "Закрыть Симулятор",
   "download_options": "Параметры Загрузки",
@@ -136,11 +136,15 @@
   "pay_here": "Оплатить Здесь",
   "pay_here_text": "Оплатить Здесь",
   "join_community": "Присоединиться к Сообществу",
-  "join_community_text": "Присоединиться к Сообществу",
+  "join_community_text": "Присоединиться",
   "watch_video": "Смотреть Видео",
   "watch_video_text": "Смотреть Видео",
   "book_now": "Забронировать Сейчас",
   "book_now_text": "Забронировать Сейчас",
   "report_issue": "Сообщить о Проблеме",
-  "report_issue_text": "Сообщить о Проблеме"
+  "report_issue_text": "Сообщить о Проблеме",
+  "download_digital": "Скачать Файл",
+  "download_digital_text": "Скачать Файл",
+  "special_promo": "Спецпредложение",
+  "special_promo_text": "Спецпредложение"
 }

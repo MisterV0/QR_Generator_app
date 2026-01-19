@@ -46,7 +46,7 @@
   "good": "Buono",
   "risky": "Rischioso",
   "unscannable": "Non scansionabile",
-  "download_qr": "SCARICA CODICE QR",
+  "download_qr": "SCARICA",
   "simulate_scan": "SIMULA SCANSIONE",
   "close_simulator": "Chiudi Simulatore",
   "download_options": "Opzioni di Download",
@@ -136,11 +136,15 @@
   "pay_here": "Paga Qui",
   "pay_here_text": "Paga Qui",
   "join_community": "Unisciti alla Nostra Community",
-  "join_community_text": "Unisciti alla Nostra Community",
+  "join_community_text": "Unisciti alla Community",
   "watch_video": "Guarda Video",
   "watch_video_text": "Guarda Video",
   "book_now": "Prenota Ora",
   "book_now_text": "Prenota Ora",
   "report_issue": "Segnala Problema",
-  "report_issue_text": "Segnala Problema"
+  "report_issue_text": "Segnala Problema",
+  "download_digital": "Scarica File",
+  "download_digital_text": "Scarica File",
+  "special_promo": "Offerta Speciale",
+  "special_promo_text": "Offerta Speciale"
 }
