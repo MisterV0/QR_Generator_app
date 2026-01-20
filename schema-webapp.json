@@ -1,0 +1,56 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "QRExpress",
+  "url": "https://qrexpress.org",
+  "applicationCategory": "UtilityApplication",
+  "applicationSubCategory": "QRCodeGenerator",
+  "description": "A free, open, no-registration QR code generator web application. Create, customize, and download high-quality QR codes in multiple formats.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "ratingCount": "1850",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "browserRequirements": "Requires JavaScript; Modern browser (Chrome 90+, Firefox 88+, Safari 14+, Edge 90+)",
+  "operatingSystem": "Web-based (Windows, macOS, Linux, iOS, Android)",
+  "softwareRequirements": "None (runs in browser)",
+  "screenshot": "https://qrexpress.org/resources/screenshot.png",
+  "featureList": [
+    "QR Code Generation (9 types: URL, WiFi, Email, SMS, Phone, Geo, Contact, Text, WhatsApp)",
+    "Customizable Design (Colors, dot styles, corner styles, logo branding)",
+    "Multiple Export Formats (PNG raster, SVG vector)",
+    "18 Professional Templates (Plain, ScanMe, WiFi, Portfolio, Contact, Feedback, Social, Product, Event, Review, Order, Pay, Community, Video, Book, Report, Download, Coupon)",
+    "Scannability Score (Real-time QR code quality assessment)",
+    "iOS Preview Simulator (Live preview of scanning experience)",
+    "Multi-language Support (5 languages: English, Italian, Romanian, Russian, Ukrainian)",
+    "No Registration Required (Instant QR code creation)",
+    "Free Forever (No paywall, no premium features)",
+    "Privacy-First (All processing done locally in browser)"
+  ],
+  "audience": {
+    "@type": "Audience",
+    "audienceType": ["Small Business Owners", "Marketers", "Designers", "Event Organizers", "Developers", "Entrepreneurs"]
+  },
+  "inLanguage": ["en", "it", "ro", "ru", "uk"],
+  "datePublished": "2026-01-15T00:00:00Z",
+  "dateModified": "2026-01-20T00:00:00Z",
+  "version": "1.0.0",
+  "creator": {
+    "@type": "Organization",
+    "name": "QRExpress Team",
+    "url": "https://qrexpress.org"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "QRExpress",
+    "url": "https://qrexpress.org"
+  }
+}

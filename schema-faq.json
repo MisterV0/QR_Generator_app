@@ -1,0 +1,166 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is QRExpress free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, QRExpress is 100% free. There are no hidden charges, no registration requirements, and no premium features. You can create unlimited QR codes and download them in high quality."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to create an account to use QRExpress?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, QRExpress requires zero registration. Simply visit the website, enter your information, customize your QR code, and download it immediately."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of QR codes can I create?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "QRExpress supports 9 QR code types: Website URLs, WiFi networks, Email messages, SMS/text messages, Phone calls, Geolocation coordinates, Contact information (vCard), Plain text, and WhatsApp messages."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I customize the appearance of my QR code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! QRExpress offers extensive customization options including custom colors, multiple dot styles (rounded, dots, classy, square, extra-rounded), corner styles (smooth, dot, square), and logo branding with transparency control."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What file formats can I download?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can download your QR code in PNG format (raster image) at multiple resolutions (500px, 1000px, 2000px), or as SVG (vector format) for scalability without quality loss."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I add my logo to the QR code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! QRExpress allows you to upload your logo or brand image. The app will intelligently place it in the center of the QR code while maintaining scannability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the Scannability Score work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Scannability Score is a real-time assessment of your QR code's quality. It evaluates data density, contrast levels, logo obstruction, and other factors that affect scanability. Aim for A+ ratings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I preview how the QR code scans?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! QRExpress includes an iOS Simulator that shows a realistic preview of how your QR code will appear when scanned on an iPhone. This helps you ensure optimal design and usability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What languages does QRExpress support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "QRExpress is available in 5 languages: English, Italian, Romanian, Russian, and Ukrainian. Simply click the language selector in the top right corner."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data stored on your servers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. QRExpress is privacy-first. All QR code generation happens locally in your browser. We do not store, track, or collect your QR code data or personal information."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between PNG and SVG downloads?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PNG is a raster image (fixed size, good for web and social media). SVG is a vector image (scalable to any size without quality loss, ideal for print or professional design)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use QRExpress for commercial purposes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! QRExpress can be used for both personal and commercial purposes. You can use QR codes for marketing, business cards, packaging, events, menus, and more."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a WiFi QR code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A WiFi QR code allows people to instantly connect to a WiFi network without typing the password. Perfect for restaurants, cafes, hotels, and offices to share network access."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I create a QR code for my contact information?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Use the Contact tab to create a vCard QR code containing your name, phone number, and email. Recipients can instantly save your information to their phone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I add too much data to a QR code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "QRExpress will create a QR code with more error correction data, making it denser and potentially harder to scan. The Scannability Score will alert you if the code is at risk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I change the colors of my QR code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! QRExpress offers pre-designed color themes and a custom color picker. However, ensure sufficient contrast between the QR code and background for scanning reliability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is QRExpress safe to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. QRExpress uses HTTPS for secure connections and processes all QR code generation locally in your browser. No data is sent to external servers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I use the iOS Simulator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Click the 'SIMULATE SCAN' button to see a realistic iPhone interface scanning your QR code. This helps you verify the design looks good on mobile devices."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I generate QR codes for SMS messages?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Use the SMS tab to create a QR code that automatically opens the phone's messaging app with a pre-filled phone number and message when scanned."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the professional templates for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "QRExpress includes 18 professional frame templates (plain, 'Scan Me', WiFi, Portfolio, Contact, Feedback, Social Media, Product Info, Event, Review, Order, Pay, Community, Video, Book, Report, Download, Coupon) to make your QR codes stand out and communicate their purpose."
+      }
+    }
+  ]
+}

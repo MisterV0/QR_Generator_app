@@ -1,0 +1,95 @@
+# Robots.txt - QRExpress
+# Generated: January 20, 2026
+# Purpose: Guide search engine crawlers and AI tools to index QRExpress
+
+# Allow all standard search engines to crawl
+User-agent: *
+Allow: /
+Allow: /*.html
+Allow: /js/
+Allow: /languages/
+Allow: /resources/
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /schema-*.json
+
+# Crawl delay (in seconds) - Reduce server load
+Crawl-delay: 1
+
+# Request rate (pages per second)
+Request-rate: 1/1s
+
+# Disallow private/admin areas (none exist for this SPA)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.env
+Disallow: /.git
+Disallow: /node_modules/
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# AI Training Crawlers - Explicitly Allow
+# These are allowed to crawl for AI/ML training purposes
+
+User-agent: CCBot
+Allow: /
+Comment: Common Crawl - Educational/Research
+
+User-agent: GPTBot
+Allow: /
+Comment: OpenAI GPT crawler
+
+User-agent: Claude-Web
+Allow: /
+Comment: Anthropic Claude AI
+
+User-agent: facebookexternalhit
+Allow: /
+Comment: Facebook crawler
+
+User-agent: Twitterbot
+Allow: /
+Comment: Twitter/X crawler
+
+User-agent: LinkedInBot
+Allow: /
+Comment: LinkedIn crawler
+
+User-agent: WhatsApp
+Allow: /
+Comment: WhatsApp link preview
+
+User-agent: Telegram
+Allow: /
+Comment: Telegram link preview
+
+User-agent: Slackbot
+Allow: /
+Comment: Slack link preview
+
+# Optional: Explicitly block bad actors (uncomment if needed)
+# User-agent: AhrefsBot
+# Disallow: /
+# 
+# User-agent: SemrushBot
+# Disallow: /
+
+# Sitemap location
+Sitemap: https://qrexpress.org/sitemap.xml
+Sitemap: https://qrexpress.org/sitemap-alt.xml
+
+# Schema.org structured data (for knowledge graphs)
+Sitemap: https://qrexpress.org/schema-organization.json
+Sitemap: https://qrexpress.org/schema-webapp.json
+Sitemap: https://qrexpress.org/schema-faq.json

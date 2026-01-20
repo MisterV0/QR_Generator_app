@@ -1,0 +1,34 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "QRExpress",
+  "url": "https://qrexpress.org",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://qrexpress.org/resources/logo.svg",
+    "width": 512,
+    "height": 512
+  },
+  "description": "Free QR Code Generator - Create custom, high-quality QR codes online without registration. Support for URLs, WiFi, Email, SMS, Phone, Geolocation, Contact info, and WhatsApp. Customize colors, patterns, add logos, and download in PNG or SVG format.",
+  "keywords": "QR code generator, free QR code maker, custom QR code, QR code creator, QR code online",
+  "sameAs": [
+    "https://www.facebook.com/people/Carpathian-Beaver/61586712606133/",
+    "https://www.sartorcv.com",
+    "https://www.pockeng.com"
+  ],
+  "foundingDate": "2026-01-15",
+  "foundingLocation": {
+    "@type": "Place",
+    "name": "European Union"
+  },
+  "contact": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Support",
+    "email": "contact.carpathianbeaver@protonmail.com",
+    "url": "https://qrexpress.org/contact"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "EU"
+  }
+}
