@@ -101,6 +101,15 @@
   "loc": "Locație",
   "contact_tab": "Contact",
   "text": "Text",
+  "whatsapp": "WhatsApp",
+  "calendar": "Calendar",
+  "event_title": "Titlul Evenimentului",
+  "event_date": "Data Evenimentului",
+  "timezone": "Fus Orar",
+  "start_time": "Ora de Început",
+  "end_time": "Ora de Sfârșit",
+  "location": "Locație",
+  "event_description": "Descriere",
   "page_title": "QRExpress | Generator Pro",
   "status_time": "9:41",
   "view_location_maps": "Vizualizează Locația în Hărți",
@@ -146,5 +155,9 @@
   "download_digital": "Descarcă Fișier",
   "download_digital_text": "Descarcă Fișier",
   "special_promo": "Ofertă Specială",
-  "special_promo_text": "Ofertă Specială"
+  "special_promo_text": "Ofertă Specială",  "download_app": "Descarcă Aplicația",
+  "download_app_text": "Descarcă Aplicația",
+  "support_us": "Susțineti-ne",
+  "support_us_text": "Susțineti-ne",  "add_event_to_calendar": "Adăugați {{title}} la Calendar?",
+  "add_to_calendar": "Adăugați la Calendar"
 }

@@ -127,9 +127,38 @@
     
     <url>
         <loc>https://qrexpress.org/?type=whatsapp</loc>
-        <lastmod>2026-01-20</lastmod>
+        <lastmod>2026-02-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://qrexpress.org/?type=calendar</loc>
+        <lastmod>2026-02-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- BLOG SECTION -->
+    <url>
+        <loc>https://qrexpress.org/blog/</loc>
+        <lastmod>2026-02-22</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://qrexpress.org/blog/how-qr-codes-work.html</loc>
+        <lastmod>2026-02-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://qrexpress.org/blog/wifi-qr-setup.html</loc>
+        <lastmod>2026-02-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>
 
     <!-- FOOTER PAGES -->

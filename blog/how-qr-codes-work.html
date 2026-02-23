@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>QR Codes Explained: From Barcodes to Smart Squares | QRExpress</title>
+    <meta name="title" content="QR Codes Explained: From Barcodes to Smart Squares | QRExpress">
+    <meta name="description" content="Learn how QR codes work, from their evolution from barcodes to how they store and decode information. Discover static vs dynamic QR codes and real-world uses.">
+    <meta name="keywords" content="QR codes explained, how QR codes work, QR code technology, QR code structure, static QR codes, dynamic QR codes">
+    <meta name="author" content="QRExpress">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://qrexpress.org/blog/how-qr-codes-work.html">
+    <meta property="og:title" content="QR Codes Explained: From Barcodes to Smart Squares">
+    <meta property="og:description" content="Learn how QR codes evolved from barcodes and how they store and decode information in 2026.">
+    <meta property="og:image" content="https://qrexpress.org/resources/logo.svg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://qrexpress.org/blog/how-qr-codes-work.html">
+    <meta property="twitter:title" content="QR Codes Explained: From Barcodes to Smart Squares">
+    <meta property="twitter:description" content="Learn how QR codes evolved from barcodes and how they work today.">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://qrexpress.org/blog/how-qr-codes-work.html">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="../resources/logo.svg">
+    
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            --bg-color: #f3f4f6;
+            --text-main: #1e293b;
+            --text-sub: #64748b;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; -webkit-font-smoothing: antialiased; }
+        
+        body {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e0e7ff 100%);
+            color: var(--text-main);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+        
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            margin-bottom: 40px;
+            animation: slideDown 0.6s ease-out;
+        }
+        
+        nav a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: rgba(99, 102, 241, 0.08);
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+        
+        nav a:hover {
+            background: var(--primary);
+            color: white;
+            gap: 10px;
+        }
+        
+        /* Article */
+        article {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            border: 1px solid rgba(99, 102, 241, 0.1);
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .article-header {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 0.95em;
+            color: var(--text-sub);
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(99, 102, 241, 0.08);
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
+        
+        h2 {
+            font-size: 1.8em;
+            margin-top: 45px;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-weight: 700;
+            border-left: 4px solid var(--primary);
+            padding-left: 15px;
+        }
+        
+        h3 {
+            font-size: 1.4em;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 18px;
+            color: var(--text-main);
+            line-height: 1.8;
+        }
+        
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(168, 85, 247, 0.08) 100%);
+            padding: 25px;
+            border-left: 4px solid var(--primary);
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .highlight strong {
+            color: var(--primary);
+        }
+        
+        code {
+            background-color: #f1f5f9;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #d73a49;
+            font-size: 0.95em;
+        }
+        
+        /* CTA Box */
+        .cta-box {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 40px;
+            border-radius: 16px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+        
+        .cta-box h3 {
+            color: white;
+            margin-top: 0;
+            margin-bottom: 12px;
+            border-left: none;
+            padding-left: 0;
+        }
+        
+        .cta-box p {
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 20px;
+        }
+        
+        .cta-box a {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 14px 32px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 15px;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .cta-box a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Animations */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.9em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            h3 {
+                font-size: 1.2em;
+            }
+            
+            article {
+                padding: 30px;
+            }
+            
+            .cta-box {
+                padding: 30px 20px;
+            }
+            
+            .article-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-container">
+        <nav>
+            <a href="index.html">Back to Blog</a>
+        </nav>
+        
+        <article>
+            <header class="article-header">
+                <h1>QR Codes Explained: From Barcodes to Smart Squares</h1>
+                <div class="article-meta">
+                    <span class="meta-item">February 22, 2026</span>
+                    <span class="meta-item">5 minute read</span>
+                </div>
+            </header>
+            
+            <section>
+                <p>The internet is littered with QR code explainers that tell you nothing useful. Most of them spend paragraphs comparing QR codes to hallways or some other pointless analogy. This isn't one of those. Here's what actually happens when you scan a QR code, explained clearly without the padding.</p>
+
+                <h2>The Basic Difference: 1D vs 2D</h2>
+                
+                <p>Traditional barcodes store data in one dimension: a series of vertical lines of different widths. That's it. You can fit about 20 characters maximum. They only work when scanned horizontally, and they break if they're damaged.</p>
+                
+                <p>QR codes do the same job but use two dimensions—a grid of black and white squares. This lets them store up to 7,000 characters or more. They work at any angle. They can be read even if 30% is damaged. That's not magic; that's better engineering.</p>
+
+                <h2>How QR Codes Actually Encode Information</h2>
+                
+                <p>A QR code is a bitmap image. Each black square represents a 1 in binary. Each white square represents a 0. String enough of those together, and you've encoded anything from a URL to a WiFi password to contact information. Your phone's camera captures the image, the software decodes the binary data, and then executes it.</p>
+                
+                <h3>The position markers (the three corner squares)</h3>
+                
+                <p>Every QR code has three large squares positioned at the top-left, top-right, and bottom-left corners. These aren't decoration. They're position markers that allow the scanner to determine orientation and scale. This is why QR codes work when rotated, upside down, or at an angle. The scanner finds these markers first, uses them to establish a reference frame, then reads the data grid.</p>
+                
+                <h3>The timing patterns</h3>
+                
+                <p>Between the position markers run alternating black and white lines (the timing patterns). These tell the scanner how large each individual square should be. Without them, a scanner wouldn't know if it's looking at a 21x21 grid or a 177x177 grid.</p>
+                
+                <h3>The data area and error correction</h3>
+                
+                <p>The remaining squares are divided into two parts: the actual encoded data, and redundancy information. Specifically, QR codes use Reed-Solomon error correction. This means about 30% of the code is redundant information that lets your phone reconstruct the original data if parts are damaged, blurry, or obscured. It's the same algorithm used in QR codes' original application: scanning barcodes in dusty warehouses.</p>
+                
+                <h3>The format information</h3>
+                
+                <p>There's a small area near the position markers that tells the scanner what error correction level is being used, and what data encoding scheme (numeric, alphanumeric, binary, kanji, etc.). This metadata is critical—without it, the scanner wouldn't know how to interpret the data it reads.</p>
+
+                <h2>The Data: What Gets Encoded</h2>
+                
+                <p>A QR code doesn't store URLs or WiFi passwords directly. It stores them as bits. Here's what actually fits:</p>
+                
+                <ul>
+                    <li><strong>Numeric:</strong> 7,089 digits maximum</li>
+                    <li><strong>Alphanumeric:</strong> 4,296 characters (uppercase letters, numbers, and a few symbols)</li>
+                    <li><strong>Binary/Byte mode:</strong> 2,953 bytes (any data, including lowercase letters and Unicode)</li>
+                    <li><strong>Kanji:</strong> 1,852 characters</li>
+                </ul>
+                
+                <p>The encoding mode affects capacity. If you're only storing numbers, you get more. If you're storing mixed case with symbols, you get less. Most QR codes use binary mode because it's most flexible.</p>
+
+                <h2>Standard QR Code Specifications</h2>
+                
+                <p>All QR codes follow ISO/IEC 18004, the international standard. This is why they work universally. The standard defines:</p>
+                
+                <ul>
+                    <li><strong>Version:</strong> Sizes range from Version 1 (21x21 pixels) to Version 40 (177x177 pixels). More data = larger code.</li>
+                    <li><strong>Error correction levels:</strong> L (7% recovery), M (15% recovery), Q (25% recovery), H (30% recovery). Higher levels mean more redundancy but larger codes.</li>
+                    <li><strong>Data mask patterns:</strong> 8 different patterns applied to make sure the code isn't accidentally all-black or all-white in any section.</li>
+                </ul>
+
+                <h2>Static vs Dynamic QR Codes</h2>
+                
+                <p>Here's where people get confused, so let's be precise.</p>
+                
+                <p><strong>Static:</strong> The entire URL or data is embedded in the code itself. Print it, and it points to that URL forever. Change the destination? You need a new code.</p>
+                
+                <p><strong>Dynamic:</strong> The code points to a redirect service. The code itself never changes, but the backend URL can be updated anytime. You get tracking data on how many times it was scanned. Your server goes down? The code breaks until it's back up.</p>
+                
+                <p>For permanent information (WiFi passwords, fixed URLs), use static. For marketing campaigns where you'll want to change destinations or need scan data, use dynamic.</p>
+
+                <h2>Practical Applications</h2>
+                
+                <p>QR codes encode:</p>
+                
+                <ul>
+                    <li><strong>URLs:</strong> Most common. Scan to visit a webpage.</li>
+                    <li><strong>WiFi credentials:</strong> Network name, password, and security protocol (WPA2, WPA3, etc.).</li>
+                    <li><strong>Contact information (vCard):</strong> Name, phone, email, address—structured data your phone recognizes.</li>
+                    <li><strong>Payment instructions:</strong> Bank transfers, mobile payments, cryptocurrency addresses.</li>
+                    <li><strong>Event tickets:</strong> Unique identifier that venues scan to verify entry.</li>
+                    <li><strong>Geographic coordinates:</strong> Latitude and longitude encoded as a URL.</li>
+                    <li><strong>Calendar events:</strong> Date, time, location in standard iCal format.</li>
+                    <li><strong>Email or SMS:</strong> Pre-populated message with recipient and subject line.</li>
+                </ul>
+
+                <h2>Why QR Codes Work at Any Angle</h2>
+                
+                <p>The three position markers aren't randomly placed. They form an L-shape that's asymmetrical. Your phone scans the code, identifies all three corners, and from that geometry determines: the scale, the rotation, and the perspective. From there, it can read the data grid accurately no matter the angle.</p>
+                
+                <p>This is why damaged QR codes often still work. As long as two position markers are visible and enough data area is readable, error correction can reconstruct the missing parts.</p>
+
+                <h2>The Scanning Process</h2>
+                
+                <p>When you scan a QR code:</p>
+                
+                <ol>
+                    <li>Your phone's camera captures the image.</li>
+                    <li>Image processing finds the three position markers.</li>
+                    <li>The software calculates grid size and perspective correction.</li>
+                    <li>It reads the format information and selects the right error correction algorithm.</li>
+                    <li>It decodes the data, applying error correction if needed.</li>
+                    <li>The decoded data is interpreted (URL, WiFi, contact, etc.).</li>
+                    <li>The appropriate action is triggered (open browser, connect to network, etc.).</li>
+                </ol>
+                
+                <p>All of this happens in under a second on modern phones.</p>
+                
+                <p>The next time you scan a QR code with your phone, you'll know exactly what's happening behind the scenes. Those three corner squares, the black and white pattern, and the built-in error correction—they're all working together to instantly connect you to information. Pretty neat for a simple-looking square, right?</p>
+            </section>
+            
+            <div class="cta-box">
+                <h3>Ready to Create Your QR Code?</h3>
+                <p>Use QRExpress to generate professional QR codes with custom colors and branding.</p>
+                <a href="../#en">Create QR Code Now</a>
+            </div>
+        </article>
+    </div>
+    
+    <!-- Schema.org BlogPosting markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "QR Codes Explained: From Barcodes to Smart Squares",
+        "description": "Learn how QR codes evolved from barcodes and how they store and decode information. Discover static vs dynamic QR codes and real-world applications.",
+        "image": "https://qrexpress.org/resources/logo.svg",
+        "datePublished": "2026-02-22",
+        "dateModified": "2026-02-22",
+        "author": {
+            "@type": "Organization",
+            "name": "QRExpress",
+            "url": "https://qrexpress.org"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "QRExpress",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://qrexpress.org/resources/logo.svg"
+            }
+        }
+    }
+    </script>
+</body>
+</html>

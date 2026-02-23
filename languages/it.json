@@ -101,6 +101,15 @@
   "loc": "Posizione",
   "contact_tab": "Contatto",
   "text": "Testo",
+  "whatsapp": "WhatsApp",
+  "calendar": "Calendario",
+  "event_title": "Titolo Evento",
+  "event_date": "Data Evento",
+  "timezone": "Fuso Orario",
+  "start_time": "Ora Inizio",
+  "end_time": "Ora Fine",
+  "location": "Luogo",
+  "event_description": "Descrizione",
   "page_title": "QRExpress | Generatore Pro",
   "status_time": "9:41",
   "view_location_maps": "Visualizza Posizione in Mappe",
@@ -146,5 +155,11 @@
   "download_digital": "Scarica File",
   "download_digital_text": "Scarica File",
   "special_promo": "Offerta Speciale",
-  "special_promo_text": "Offerta Speciale"
+  "special_promo_text": "Offerta Speciale",
+  "download_app": "Scarica App",
+  "download_app_text": "Scarica App",
+  "support_us": "Supportaci",
+  "support_us_text": "Supportaci",
+  "add_event_to_calendar": "Aggiungi {{title}} al Calendario?",
+  "add_to_calendar": "Aggiungi al Calendario"
 }

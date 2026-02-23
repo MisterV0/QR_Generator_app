@@ -366,14 +366,16 @@
         }
 
         #qr-canvas-wrapper {
-            background: white; /* padding removed */ border-radius: 24px;
+            background: white; border-radius: 24px; padding: 25px;
             box-shadow: 0 20px 50px -12px rgba(0,0,0,0.15);
             transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            position: relative; z-index: 2; width: 85%; height: auto; margin: 0 auto;
+            position: relative; z-index: 2; width: 85%; height: auto; margin: 0 auto; display: flex; align-items: center; justify-content: center;
         }
         #qr-canvas {
             line-height: 0; /* Prevent extra space */
-            margin: 25px;
+            display: block; /* Remove inline spacing */
+            margin: 0; /* No margin */
+            padding: 0; /* No padding */
         }
         #qr-canvas-wrapper:hover { transform: scale(1.02) translateY(-5px); box-shadow: 0 25px 60px -12px rgba(99, 102, 241, 0.25); }
         
@@ -623,6 +625,10 @@
         .tp-report { background: #cbd5e1; border: 2px solid #f97316; }
         .tp-download { background: #cbd5e1; border: 2px solid #0ea5e9; }
         .tp-coupon { background: #cbd5e1; border: 2px dashed #f43f5e; }
+        .tp-app { background: #cbd5e1; border: 2px solid #3b82f6; }
+        .tp-donate { background: #cbd5e1; border: 2px solid #ef4444; }
+        .tp-app { background: #cbd5e1; border: 2px solid #3b82f6; }
+        .tp-donate { background: #cbd5e1; border: 2px solid #ef4444; }
 
         .template-name { font-size: 0.75rem; font-weight: 700; color: var(--text-main); }
 
@@ -645,6 +651,8 @@
             border-radius: 8px; transition: all 0.2s; text-align: center;
             font-size: 0.85rem; font-weight: 500; color: var(--text-sub);
             position: relative;
+            text-decoration: none;
+            display: inline-block;
         }
         .footer-btn:hover { 
             background: #f8fafc; 
@@ -1108,6 +1116,10 @@
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.632.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
                     WhatsApp
                 </button>
+                <button class="tab-btn" onclick="switchTab('calendar')" data-i18n="calendar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    Calendar
+                </button>
             </div>
 
             <!-- FORMS -->
@@ -1155,8 +1167,48 @@
                 <div style="margin-top:15px"><label data-i18n="message">Message <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(WhatsApp message content)</span></label><textarea id="whatsappMessage" oninput="updateQR()"></textarea></div>
             </div>
 
+            <div id="form-calendar" class="form-group">
+                <label data-i18n="event_title">Event Title <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(Name of your event)</span></label>
+                <input type="text" id="calendarTitle" placeholder="Conference 2026" oninput="updateQR()">
+                
+                <div class="row-2" style="margin-top:15px">
+                    <div>
+                        <label data-i18n="event_date">Date <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(Event date)</span></label>
+                        <input type="date" id="calendarDate" oninput="updateQR()">
+                    </div>
+                    <div>
+                        <label data-i18n="timezone">Timezone <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(UTC offset)</span></label>
+                        <select id="calendarTimezone" onchange="updateQR()">
+                            <option value="UTC">UTC (GMT+0)</option>
+                            <option value="UTC+1">UTC+1 (CET)</option>
+                            <option value="UTC+2">UTC+2 (CEST)</option>
+                            <option value="UTC-5">UTC-5 (EST)</option>
+                            <option value="UTC-8">UTC-8 (PST)</option>
+                        </select>
+                    </div>
+                </div>
 
-            <!-- Customization Section -->
+                <div class="row-2" style="margin-top:15px">
+                    <div>
+                        <label data-i18n="start_time">Start Time <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(HH:MM format)</span></label>
+                        <input type="time" id="calendarStartTime" oninput="updateQR()">
+                    </div>
+                    <div>
+                        <label data-i18n="end_time">End Time <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(HH:MM format)</span></label>
+                        <input type="time" id="calendarEndTime" oninput="updateQR()">
+                    </div>
+                </div>
+
+                <div style="margin-top:15px">
+                    <label data-i18n="location">Location <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(Event venue or address)</span></label>
+                    <input type="text" id="calendarLocation" placeholder="123 Main St, City" oninput="updateQR()">
+                </div>
+
+                <div style="margin-top:15px">
+                    <label data-i18n="event_description">Description <span style="font-weight: 400; color: var(--text-sub); font-size: 0.85em;">(Event details)</span></label>
+                    <textarea id="calendarDescription" placeholder="Event description..." oninput="updateQR()"></textarea>
+                </div>
+            </div>
             <div class="design-section">
                 <button class="design-toggle" onclick="toggleDesign()">
                     <span style="display:flex; align-items:center; gap:10px;">
@@ -1289,6 +1341,7 @@
 
     <footer style="padding: 2rem 1rem; text-align: center; border-top: 1px solid #e2e8f0; margin-top: 3rem;">
         <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem 2rem; margin-bottom: 2rem;">
+            <a href="./blog/" class="footer-btn">Blog</a>
             <button onclick="openFooterModal('terms')" class="footer-btn">Terms of Service</button>
             <button onclick="openFooterModal('contact')" class="footer-btn">Contact</button>
             <button onclick="openFooterModal('tools')" class="footer-btn">Other Tools</button>
@@ -1407,6 +1460,14 @@
             <div class="footer-modal-body">
                 <div style="margin-top: 2rem;">
                     <div style="padding: 1rem 0; border-bottom: 1px solid #e2e8f0;">
+                        <div style="font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">Version 1.1.0 - February 2026</div>
+                        <ul style="margin-left: 1.5rem; color: var(--text-sub); line-height: 1.8;">
+                            <li>Added calendar event QR code support (vCalendar format)</li>
+                            <li>Launched blog with 2 detailed articles (English)</li>
+                            <li>Improved QR code hero section visuals and design</li>
+                        </ul>
+                    </div>
+                    <div style="padding: 1rem 0; border-bottom: 1px solid #e2e8f0;">
                         <div style="font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">Version 1.0.0 - January 2026</div>
                         <ul style="margin-left: 1.5rem; color: var(--text-sub); line-height: 1.8;">
                             <li>Initial release of QRExpress</li>
@@ -1521,6 +1582,14 @@
                                 <div class="template-preview-icon tp-coupon"></div>
                                 <div class="template-name" data-i18n="special_promo">Special Offer</div>
                             </div>
+                            <div class="template-card" onclick="selectTemplate(this, 'download_app')">
+                                <div class="template-preview-icon tp-app"></div>
+                                <div class="template-name" data-i18n="download_app">Download App</div>
+                            </div>
+                            <div class="template-card" onclick="selectTemplate(this, 'support_us')">
+                                <div class="template-preview-icon tp-donate"></div>
+                                <div class="template-name" data-i18n="support_us">Support Us</div>
+                            </div>
                     </div>
 
                     <div>
@@ -1622,6 +1691,36 @@
                 const phone = document.getElementById('whatsappPhone').value || "+15551234567";
                 const msg = encodeURIComponent(document.getElementById('whatsappMessage').value || "");
                 return `https://wa.me/${phone.replace(/[^0-9]/g, '')}${msg ? '?text=' + msg : ''}`;
+            }
+            if (currentType === 'calendar') {
+                const title = document.getElementById('calendarTitle').value || "Event";
+                const date = document.getElementById('calendarDate').value;
+                const startTime = document.getElementById('calendarStartTime').value;
+                const endTime = document.getElementById('calendarEndTime').value;
+                const location = document.getElementById('calendarLocation').value || "";
+                const description = document.getElementById('calendarDescription').value || "";
+                
+                if (!date || !startTime || !endTime) {
+                    return "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//QRExpress//\nBEGIN:VEVENT\nDTSTART:20260222T100000Z\nDTEND:20260222T110000Z\nSUMMARY:Add Event Details\nEND:VEVENT\nEND:VCALENDAR";
+                }
+                
+                const dateObj = new Date(date);
+                const [startH, startM] = startTime.split(':');
+                const [endH, endM] = endTime.split(':');
+                
+                const dtStart = dateObj.getFullYear() + 
+                               String(dateObj.getMonth() + 1).padStart(2, '0') + 
+                               String(dateObj.getDate()).padStart(2, '0') + 
+                               'T' + startH + startM + '00Z';
+                
+                const dtEnd = dateObj.getFullYear() + 
+                             String(dateObj.getMonth() + 1).padStart(2, '0') + 
+                             String(dateObj.getDate()).padStart(2, '0') + 
+                             'T' + endH + endM + '00Z';
+                
+                const uid = 'qrexpress-' + Date.now() + '@qrexpress.org';
+                
+                return `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//QRExpress//\nBEGIN:VEVENT\nUID:${uid}\nDTSTART:${dtStart}\nDTEND:${dtEnd}\nSUMMARY:${title}\nLOCATION:${location}\nDESCRIPTION:${description}\nEND:VEVENT\nEND:VCALENDAR`;
             }
         }
 
@@ -1906,6 +2005,12 @@
                 html = `<div class="sheet-icon">${icons.whatsapp}</div><div class="sheet-desc">${whatsappText}</div>`;
                 buttonsHtml = `<button class="ios-action-btn primary">${i18n && i18n.t ? i18n.t('open_whatsapp') : 'Open WhatsApp'}</button>`;
             }
+            else if(currentType === 'calendar') {
+                const title = document.getElementById('calendarTitle').value || "Event";
+                const calendarText = (i18n && i18n.t ? i18n.t('add_event_to_calendar') : 'Add {{title}} to Calendar?').replace('{{title}}', title);
+                html = `<div class="sheet-icon">${icons.calendar || '📅'}</div><div class="sheet-desc"><strong>${title}</strong><br>${calendarText}</div>`;
+                buttonsHtml = `<button class="ios-action-btn primary">${i18n && i18n.t ? i18n.t('add_to_calendar') : 'Add to Calendar'}</button>`;
+            }
             else {
                 const plainText = i18n && i18n.t ? i18n.t('plain_text_detected') : 'Plain Text detected.';
                 html = `<div class="sheet-icon">${icons.text}</div><div class="sheet-desc">${plainText}</div>`;
@@ -1978,6 +2083,8 @@
                 else if (currentTemplate === 'report') { frameText = (i18n && i18n.t ? i18n.t('report_issue_text') : "Report Issue"); frameColor = "#f97316"; }
                 else if (currentTemplate === 'download') { frameText = (i18n && i18n.t ? i18n.t('download_digital_text') : "Download File"); frameColor = "#0ea5e9"; }
                 else if (currentTemplate === 'coupon') { frameText = (i18n && i18n.t ? i18n.t('special_promo_text') : "Special Offer"); frameColor = "#f43f5e"; }
+                else if (currentTemplate === 'download_app') { frameText = (i18n && i18n.t ? i18n.t('download_app_text') : "Download App"); frameColor = "#3b82f6"; }
+                else if (currentTemplate === 'support_us') { frameText = (i18n && i18n.t ? i18n.t('support_us_text') : "Support Us"); frameColor = "#ef4444"; }
             }
 
             const finalWidth = outputSize + (padding * 2);

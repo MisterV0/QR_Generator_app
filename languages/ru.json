@@ -101,6 +101,15 @@
   "loc": "Расположение",
   "contact_tab": "Контакт",
   "text": "Текст",
+  "whatsapp": "WhatsApp",
+  "calendar": "Календарь",
+  "event_title": "Название События",
+  "event_date": "Дата События",
+  "timezone": "Часовой Пояс",
+  "start_time": "Время Начала",
+  "end_time": "Время Окончания",
+  "location": "Место Проведения",
+  "event_description": "Описание",
   "page_title": "QRExpress | Профессиональный Генератор",
   "status_time": "9:41",
   "view_location_maps": "Просмотреть Местоположение на Картах",
@@ -146,5 +155,9 @@
   "download_digital": "Скачать Файл",
   "download_digital_text": "Скачать Файл",
   "special_promo": "Спецпредложение",
-  "special_promo_text": "Спецпредложение"
+  "special_promo_text": "Спецпредложение",  "download_app": "Скачать Приложение",
+  "download_app_text": "Скачать Приложение",
+  "support_us": "Поддержите Нас",
+  "support_us_text": "Поддержите Нас",  "add_event_to_calendar": "Добавить {{title}} в календарь?",
+  "add_to_calendar": "Добавить в календарь"
 }
