@@ -632,6 +632,21 @@
 
         .template-name { font-size: 0.75rem; font-weight: 700; color: var(--text-main); }
 
+        /* Frame Customization Controls */
+        .frame-customize { display: none; flex-direction: column; gap: 14px; padding: 16px; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; }
+        .frame-customize.visible { display: flex; }
+        .frame-customize label { font-size: 0.85rem; font-weight: 700; color: var(--text-main); margin-bottom: 2px; }
+        .frame-color-row { display: flex; align-items: center; gap: 10px; }
+        .frame-color-input { width: 40px; height: 40px; border: 2px solid #e2e8f0; border-radius: 10px; cursor: pointer; padding: 2px; background: white; -webkit-appearance: none; }
+        .frame-color-input::-webkit-color-swatch-wrapper { padding: 0; }
+        .frame-color-input::-webkit-color-swatch { border: none; border-radius: 6px; }
+        .frame-color-hex { flex: 1; padding: 8px 12px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 0.85rem; font-weight: 600; font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-main); text-transform: uppercase; transition: border-color 0.2s; }
+        .frame-color-hex:focus { outline: none; border-color: var(--primary); }
+        .border-style-grid { display: flex; gap: 8px; flex-wrap: wrap; }
+        .border-style-btn { padding: 7px 14px; border-radius: 8px; border: 2px solid #e2e8f0; background: white; font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: all 0.2s; font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-sub); }
+        .border-style-btn:hover { border-color: var(--primary); color: var(--primary); }
+        .border-style-btn.active { border-color: var(--primary); background: #e0e7ff; color: var(--primary); }
+
         .btn-confirm { width: 100%; background: var(--text-main); color: white; padding: 1rem; border-radius: 12px; border: none; font-weight: 700; cursor: pointer; transition: 0.2s; font-size: 1rem; }
         .btn-confirm:hover { background: black; transform: translateY(-2px); box-shadow: 0 10px 20px -5px rgba(0,0,0,0.2); }
         
@@ -946,6 +961,8 @@
         @keyframes floatUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3566519433349914" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -1460,6 +1477,13 @@
             <div class="footer-modal-body">
                 <div style="margin-top: 2rem;">
                     <div style="padding: 1rem 0; border-bottom: 1px solid #e2e8f0;">
+                        <div style="font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">Version 1.2.0 - March 2026</div>
+                        <ul style="margin-left: 1.5rem; color: var(--text-sub); line-height: 1.8;">
+                            <li>Frame customization:</li>
+                            <li>Border style selector: choose between Solid, Dashed, Dotted, Double, or None for frame borders</li>
+                        </ul>
+                    </div>
+                    <div style="padding: 1rem 0; border-bottom: 1px solid #e2e8f0;">
                         <div style="font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">Version 1.1.0 - February 2026</div>
                         <ul style="margin-left: 1.5rem; color: var(--text-sub); line-height: 1.8;">
                             <li>Added calendar event QR code support (vCalendar format)</li>
@@ -1592,6 +1616,27 @@
                             </div>
                     </div>
 
+                    <!-- Frame Customization: Color + Border Style -->
+                    <div id="frameCustomize" class="frame-customize">
+                        <div>
+                            <label data-i18n="frame_color">Frame Color</label>
+                            <div class="frame-color-row">
+                                <input type="color" id="frameColorPicker" class="frame-color-input" value="#6366f1" oninput="onFrameColorPick(this.value)">
+                                <input type="text" id="frameColorHex" class="frame-color-hex" value="#6366f1" maxlength="7" oninput="onFrameColorHex(this.value)">
+                            </div>
+                        </div>
+                        <div>
+                            <label data-i18n="border_style">Border Style</label>
+                            <div class="border-style-grid">
+                                <button class="border-style-btn active" onclick="selectBorderStyle(this, 'solid')" data-i18n="border_solid">Solid</button>
+                                <button class="border-style-btn" onclick="selectBorderStyle(this, 'dashed')" data-i18n="border_dashed">Dashed</button>
+                                <button class="border-style-btn" onclick="selectBorderStyle(this, 'dotted')" data-i18n="border_dotted">Dotted</button>
+                                <button class="border-style-btn" onclick="selectBorderStyle(this, 'double')" data-i18n="border_double">Double</button>
+                                <button class="border-style-btn" onclick="selectBorderStyle(this, 'none')" data-i18n="border_none">None</button>
+                            </div>
+                        </div>
+                    </div>
+
                     <div>
                         <label data-i18n="resolution">Resolution</label>
                         <select id="modalSizeSelect" onchange="updateModalPreview()">
@@ -1622,6 +1667,10 @@
         // Active Color State
         let activeColor1 = "#6366f1";
         let activeColor2 = "#a855f7";
+        
+        // Frame Customization State
+        let userFrameColor = "#6366f1";
+        let userBorderStyle = "solid";
         
         // Animation State
         let animationTimeout;
@@ -2046,6 +2095,34 @@
             currentTemplate = type;
             document.querySelectorAll('.template-card').forEach(c => c.classList.remove('selected'));
             el.classList.add('selected');
+            // Show/hide frame customization
+            const fc = document.getElementById('frameCustomize');
+            if (type !== 'none') {
+                fc.classList.add('visible');
+            } else {
+                fc.classList.remove('visible');
+            }
+            updateModalPreview();
+        }
+
+        function onFrameColorPick(val) {
+            userFrameColor = val;
+            document.getElementById('frameColorHex').value = val;
+            updateModalPreview();
+        }
+
+        function onFrameColorHex(val) {
+            if (/^#[0-9a-fA-F]{6}$/.test(val)) {
+                userFrameColor = val;
+                document.getElementById('frameColorPicker').value = val;
+                updateModalPreview();
+            }
+        }
+
+        function selectBorderStyle(el, style) {
+            userBorderStyle = style;
+            document.querySelectorAll('.border-style-btn').forEach(b => b.classList.remove('active'));
+            el.classList.add('active');
             updateModalPreview();
         }
 
@@ -2061,30 +2138,31 @@
             let frameText = "";
             let frameColor = activeColor1; 
 
-            // Configure Template Logic
+            // Configure Template Logic — text from template, color + border from user
             if (currentTemplate !== 'none') {
                 padding = outputSize * 0.1; 
                 bottomTextHeight = outputSize * 0.15;
+                frameColor = userFrameColor;
                 
                 if (currentTemplate === 'scan') frameText = (i18n && i18n.t ? i18n.t('scan_me_text') : "SCAN ME");
                 else if (currentTemplate === 'wifi') frameText = (i18n && i18n.t ? i18n.t('connect_wifi_text') : "Connect to WiFi");
                 else if (currentTemplate === 'portfolio') frameText = (i18n && i18n.t ? i18n.t('view_portfolio_text') : "View Portfolio");
                 else if (currentTemplate === 'contact') frameText = (i18n && i18n.t ? i18n.t('save_contact_text') : "Save Contact");
                 else if (currentTemplate === 'sms') frameText = (i18n && i18n.t ? i18n.t('send_feedback_text') : "Send Feedback");
-                else if (currentTemplate === 'social') { frameText = (i18n && i18n.t ? i18n.t('connect_with_us_text') : "Connect With Us"); frameColor = "#8b5cf6"; }
-                else if (currentTemplate === 'product') { frameText = (i18n && i18n.t ? i18n.t('product_details_text') : "Product Details"); frameColor = "#3b82f6"; }
-                else if (currentTemplate === 'event') { frameText = (i18n && i18n.t ? i18n.t('event_checkin_text') : "Event Check-In"); frameColor = "#f97316"; }
-                else if (currentTemplate === 'review') { frameText = (i18n && i18n.t ? i18n.t('leave_review_text') : "Leave a Review"); frameColor = "#f59e0b"; }
-                else if (currentTemplate === 'order') { frameText = (i18n && i18n.t ? i18n.t('order_here_text') : "Order Here"); frameColor = "#10b981"; }
-                else if (currentTemplate === 'pay') { frameText = (i18n && i18n.t ? i18n.t('pay_here_text') : "Pay Here"); frameColor = "#22c55e"; }
-                else if (currentTemplate === 'community') { frameText = (i18n && i18n.t ? i18n.t('join_community_text') : "Join Our Community"); frameColor = "#6366f1"; }
-                else if (currentTemplate === 'video') { frameText = (i18n && i18n.t ? i18n.t('watch_video_text') : "Watch Video"); frameColor = "#ef4444"; }
-                else if (currentTemplate === 'book') { frameText = (i18n && i18n.t ? i18n.t('book_now_text') : "Book Now"); frameColor = "#8b5cf6"; }
-                else if (currentTemplate === 'report') { frameText = (i18n && i18n.t ? i18n.t('report_issue_text') : "Report Issue"); frameColor = "#f97316"; }
-                else if (currentTemplate === 'download') { frameText = (i18n && i18n.t ? i18n.t('download_digital_text') : "Download File"); frameColor = "#0ea5e9"; }
-                else if (currentTemplate === 'coupon') { frameText = (i18n && i18n.t ? i18n.t('special_promo_text') : "Special Offer"); frameColor = "#f43f5e"; }
-                else if (currentTemplate === 'download_app') { frameText = (i18n && i18n.t ? i18n.t('download_app_text') : "Download App"); frameColor = "#3b82f6"; }
-                else if (currentTemplate === 'support_us') { frameText = (i18n && i18n.t ? i18n.t('support_us_text') : "Support Us"); frameColor = "#ef4444"; }
+                else if (currentTemplate === 'social') frameText = (i18n && i18n.t ? i18n.t('connect_with_us_text') : "Connect With Us");
+                else if (currentTemplate === 'product') frameText = (i18n && i18n.t ? i18n.t('product_details_text') : "Product Details");
+                else if (currentTemplate === 'event') frameText = (i18n && i18n.t ? i18n.t('event_checkin_text') : "Event Check-In");
+                else if (currentTemplate === 'review') frameText = (i18n && i18n.t ? i18n.t('leave_review_text') : "Leave a Review");
+                else if (currentTemplate === 'order') frameText = (i18n && i18n.t ? i18n.t('order_here_text') : "Order Here");
+                else if (currentTemplate === 'pay') frameText = (i18n && i18n.t ? i18n.t('pay_here_text') : "Pay Here");
+                else if (currentTemplate === 'community') frameText = (i18n && i18n.t ? i18n.t('join_community_text') : "Join Our Community");
+                else if (currentTemplate === 'video') frameText = (i18n && i18n.t ? i18n.t('watch_video_text') : "Watch Video");
+                else if (currentTemplate === 'book') frameText = (i18n && i18n.t ? i18n.t('book_now_text') : "Book Now");
+                else if (currentTemplate === 'report') frameText = (i18n && i18n.t ? i18n.t('report_issue_text') : "Report Issue");
+                else if (currentTemplate === 'download') frameText = (i18n && i18n.t ? i18n.t('download_digital_text') : "Download File");
+                else if (currentTemplate === 'coupon') frameText = (i18n && i18n.t ? i18n.t('special_promo_text') : "Special Offer");
+                else if (currentTemplate === 'download_app') frameText = (i18n && i18n.t ? i18n.t('download_app_text') : "Download App");
+                else if (currentTemplate === 'support_us') frameText = (i18n && i18n.t ? i18n.t('support_us_text') : "Support Us");
             }
 
             const finalWidth = outputSize + (padding * 2);
@@ -2097,22 +2175,45 @@
             ctx.fillRect(0, 0, finalWidth, finalHeight);
 
             if (currentTemplate !== 'none') {
-                ctx.lineWidth = outputSize * 0.01; 
+                const bw = outputSize * 0.01;
+                ctx.lineWidth = bw;
                 ctx.strokeStyle = frameColor;
                 
+                // Draw border based on user-selected style
+                if (userBorderStyle !== 'none') {
+                    const bx = padding / 2;
+                    const by = padding / 2;
+                    const bWidth = finalWidth - padding;
+                    const bHeight = finalHeight - padding;
+
+                    if (userBorderStyle === 'dashed') {
+                        ctx.setLineDash([bw * 4, bw * 2]);
+                        ctx.strokeRect(bx, by, bWidth, bHeight);
+                        ctx.setLineDash([]);
+                    } else if (userBorderStyle === 'dotted') {
+                        ctx.setLineDash([bw, bw * 2]);
+                        ctx.lineCap = 'round';
+                        ctx.strokeRect(bx, by, bWidth, bHeight);
+                        ctx.setLineDash([]);
+                        ctx.lineCap = 'butt';
+                    } else if (userBorderStyle === 'double') {
+                        const gap = bw * 2;
+                        ctx.lineWidth = bw * 0.6;
+                        ctx.strokeRect(bx, by, bWidth, bHeight);
+                        ctx.strokeRect(bx + gap, by + gap, bWidth - gap * 2, bHeight - gap * 2);
+                        ctx.lineWidth = bw;
+                    } else {
+                        // solid (default)
+                        ctx.strokeRect(bx, by, bWidth, bHeight);
+                    }
+                }
+                
+                // Draw text area background for 'scan' template
                 if (currentTemplate === 'scan') {
-                    ctx.fillStyle = "#1e293b"; 
+                    ctx.fillStyle = frameColor;
                     ctx.fillRect(0, finalHeight - bottomTextHeight, finalWidth, bottomTextHeight);
                     ctx.fillStyle = "#ffffff";
-                } 
-                else if (currentTemplate === 'sms') {
-                    ctx.setLineDash([20, 10]);
-                    ctx.strokeRect(padding/2, padding/2, finalWidth - padding, finalHeight - padding);
-                    ctx.setLineDash([]);
-                    ctx.fillStyle = "#ef4444";
-                }
-                else {
-                    ctx.strokeRect(padding/2, padding/2, finalWidth - padding, finalHeight - padding);
+                } else {
                     ctx.fillStyle = frameColor;
                 }
 
